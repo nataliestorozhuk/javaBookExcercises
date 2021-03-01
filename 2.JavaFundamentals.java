@@ -28,8 +28,9 @@ class JavaFundamentals {
 
     }
 
-    public static void nameAgeAndInitials() {
+    public static int  nameAgeAndInitials() {
 
+        return 10; 
     }
 
 }
