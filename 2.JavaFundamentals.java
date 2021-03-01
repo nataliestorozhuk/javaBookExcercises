@@ -4,7 +4,8 @@ class JavaFundamentals {
 
     public static void run() {
 
-        nameAgeAndAnnualIncome();
+        //nameAgeAndAnnualIncome();
+        nameAgeAndInitials();
     }
 
     /////////////////////////////////
@@ -28,9 +29,23 @@ class JavaFundamentals {
 
     }
 
-    public static int  nameAgeAndInitials() {
+    public static void nameAgeAndInitials() {
 
-        return 10; 
+        String firstName = "Nata"; 
+        String middleName = " ";  
+        String lastName = "Stor"; 
+        char firstInitial = 'N';
+        char middleInitial = ' ';
+        char lastInitial = 'S';
+
+        System.out.println("Full name: " + firstName + " " + middleName + " " + lastName);
+        System.out.println("Initials: " + firstInitial + ". " + lastInitial + "." );
+       
+    }
+
+
+    public static void personalInformation() {
+        
     }
 
 }
