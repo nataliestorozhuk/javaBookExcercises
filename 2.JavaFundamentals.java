@@ -7,7 +7,8 @@ class JavaFundamentals {
         // nameAgeAndAnnualIncome();
         // nameAgeAndInitials();
         // personalInformation();
-        salesPrediction();
+        // salesPrediction();
+        salesTax();
     }
 
     /////////////////////////////////
@@ -69,10 +70,40 @@ class JavaFundamentals {
     public static void salesPrediction() {
         long sales = 4600000;
         double totalSales = 0.62;
-        double result = sales*totalSales;
+        double result = sales * totalSales;
 
         System.out.println(result);
 
     }
 
+    public static void landCalculation() {
+
+        double oneAcreOfLand = 43560;
+        double squareFeet = 389767;
+
+        double result = squareFeet / oneAcreOfLand;
+
+        System.out.println(result);
+
+    }
+
+    public static void salesTax() {
+
+        double purchase;
+        double stateTax = 0.04;
+        double countyTax = 0.02;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the amount of a purchase: ");
+        purchase = keyboard.nextDouble();
+
+        double stateTaxResult = purchase * stateTax;
+        double countyTaxResult = purchase * countyTax;
+        double totalOfSale = purchase + stateTaxResult + countyTaxResult;
+
+        System.out.println("The amount of the purchase is: " + purchase);
+        System.out.println("The state sales tax is: " + stateTaxResult);
+        System.out.println("The county sales tax is: " + countyTaxResult);
+        System.out.println("The total of the sale is: " + totalOfSale);
+    }
 }
