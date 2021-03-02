@@ -8,7 +8,8 @@ class JavaFundamentals {
         // nameAgeAndInitials();
         // personalInformation();
         // salesPrediction();
-        salesTax();
+        // salesTax();
+        cookieCalories();
     }
 
     /////////////////////////////////
@@ -105,5 +106,24 @@ class JavaFundamentals {
         System.out.println("The state sales tax is: " + stateTaxResult);
         System.out.println("The county sales tax is: " + countyTaxResult);
         System.out.println("The total of the sale is: " + totalOfSale);
+    }
+
+    public static void cookieCalories() {
+
+        Scanner keybord = new Scanner(System.in);
+        System.out.println("Enter the number of cookies you ate: ");
+        int consumedCookies = keybord.nextInt();
+
+        int oneBagOfCookies = 40;
+        int servings = 10;
+        int caloriesInServing = 300;
+
+        double caloriesInBag = servings * caloriesInServing;
+        double caloriesInCookie = caloriesInBag/oneBagOfCookies;
+        double totalCalories = consumedCookies * caloriesInCookie;
+
+        System.out.println("The amount of the cookies consumed: " + consumedCookies);
+        System.out.println("The amount of total calories consumed: " + totalCalories);
+
     }
 }
