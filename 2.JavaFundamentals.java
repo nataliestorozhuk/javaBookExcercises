@@ -6,7 +6,8 @@ class JavaFundamentals {
 
         // nameAgeAndAnnualIncome();
         // nameAgeAndInitials();
-        personalInformation();
+        // personalInformation();
+        salesPrediction();
     }
 
     /////////////////////////////////
@@ -61,7 +62,17 @@ class JavaFundamentals {
 
         String collegeMajor = "Web Development";
 
-        System.out.println(name + "\n" + address + "\n" + city + "\n" + state + "\n" + zip + "\n" + phoneNumberString + "\n" + collegeMajor);
+        System.out.println(name + "\n" + address + "\n" + city + "\n" + state + "\n" + zip + "\n" + phoneNumberString
+                + "\n" + collegeMajor);
+    }
+
+    public static void salesPrediction() {
+        long sales = 4600000;
+        double totalSales = 0.62;
+        double result = sales*totalSales;
+
+        System.out.println(result);
+
     }
 
 }
