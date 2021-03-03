@@ -9,7 +9,8 @@ class JavaFundamentals {
         // personalInformation();
         // salesPrediction();
         // salesTax();
-        cookieCalories();
+        // cookieCalories();
+        milesPerGallon();
     }
 
     /////////////////////////////////
@@ -125,5 +126,18 @@ class JavaFundamentals {
         System.out.println("The amount of the cookies consumed: " + consumedCookies);
         System.out.println("The amount of total calories consumed: " + totalCalories);
 
+    }
+
+    public static void milesPerGallon() {
+
+Scanner keyboard = new Scanner(System.in);
+System.out.println("Enter the number of miles driven: ");
+double milesDriven = keyboard.nextDouble();  
+System.out.println("Enter the gallons of gas used: ");
+double gasUsed = keyboard.nextDouble();
+
+double result = milesDriven/gasUsed;
+
+System.out.println("Car miles per gallon is: " + result);
     }
 }
