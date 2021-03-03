@@ -12,7 +12,10 @@ class JavaFundamentals {
         // cookieCalories();
         // milesPerGallon();
         // testAvarage();
-        circuitBoardProfit();
+        // circuitBoardProfit();
+        // stringManipulator();
+        // restaurantBill();
+        maleAndFemalePercentages();
     }
 
     /////////////////////////////////
@@ -122,7 +125,7 @@ class JavaFundamentals {
         int caloriesInServing = 300;
 
         double caloriesInBag = servings * caloriesInServing;
-        double caloriesInCookie = caloriesInBag/oneBagOfCookies;
+        double caloriesInCookie = caloriesInBag / oneBagOfCookies;
         double totalCalories = consumedCookies * caloriesInCookie;
 
         System.out.println("The amount of the cookies consumed: " + consumedCookies);
@@ -132,39 +135,84 @@ class JavaFundamentals {
 
     public static void milesPerGallon() {
 
-Scanner keyboard = new Scanner(System.in);
-System.out.println("Enter the number of miles driven: ");
-double milesDriven = keyboard.nextDouble();  
-System.out.println("Enter the gallons of gas used: ");
-double gasUsed = keyboard.nextDouble();
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the number of miles driven: ");
+        double milesDriven = keyboard.nextDouble();
+        System.out.println("Enter the gallons of gas used: ");
+        double gasUsed = keyboard.nextDouble();
 
-double result = milesDriven/gasUsed;
+        double result = milesDriven / gasUsed;
 
-System.out.println("Car miles per gallon is: " + result);
+        System.out.println("Car miles per gallon is: " + result);
     }
 
     public static void testAvarage() {
 
-Scanner keyboard = new Scanner(System.in);
-System.out.println("Enter your first test score: ");
-double firstScore = keyboard.nextDouble();
-System.out.println("Enter your second test score: ");
-double secondScore = keyboard.nextDouble();
-System.out.println("Enter your third test score: ");
-double thirdScore = keyboard.nextDouble();
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter your first test score: ");
+        double firstScore = keyboard.nextDouble();
+        System.out.println("Enter your second test score: ");
+        double secondScore = keyboard.nextDouble();
+        System.out.println("Enter your third test score: ");
+        double thirdScore = keyboard.nextDouble();
 
-double avarage = (firstScore + secondScore + thirdScore)/3;
+        double avarage = (firstScore + secondScore + thirdScore) / 3;
 
-System.out.println("The first score is: " + firstScore);
-System.out.println("The second score is: " + secondScore);
-System.out.println("The third score is: " + thirdScore);
-System.out.printf("The avarege score is: " + "%.2f", + avarage);
+        System.out.println("The first score is: " + firstScore);
+        System.out.println("The second score is: " + secondScore);
+        System.out.println("The third score is: " + thirdScore);
+        System.out.printf("The avarege score is: " + "%.2f", +avarage);
 
     }
 
     public static void circuitBoardProfit() {
 
-        
+        double profitPercent = 0.4;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the retail price of a circuit board: ");
+        double retailPrice = keyboard.nextDouble();
+
+        double profitEarned = retailPrice * profitPercent;
+
+        System.out.printf("The amount of profit earned is: " + "%.2f", +profitEarned);
+    }
+
+    public static void stringManipulator() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter the name of your favorite city: ");
+        String favoriteCity = keyboard.next();
+        var x = favoriteCity.charAt(0);
+
+        System.out.println(favoriteCity.length());
+        System.out.println(favoriteCity.toUpperCase());
+        System.out.println(favoriteCity.toLowerCase());
+        System.out.println(favoriteCity.charAt(0));
+    }
+
+    public static void restaurantBill() {
+
+        double tax = 0.0675;
+        double tip = 0.2;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter the charge for the meal: ");
+        double mealCharge = keyboard.nextDouble();
+        double taxAmount = mealCharge * tax;
+        double mealPlusTax = mealCharge * tax + mealCharge;
+        double tipAmount = mealPlusTax * tip;
+        double totalBill = mealPlusTax + tipAmount;
+
+        System.out.println("The tax amount is: " + taxAmount);
+        System.out.println("The tip amount is: " + tipAmount);
+        System.out.println("The total bill is: " + totalBill);
+
+    }
+
+    public static void maleAndFemalePercentages() {
+
     }
 }
+
 
