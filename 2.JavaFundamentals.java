@@ -212,7 +212,16 @@ class JavaFundamentals {
 
     public static void maleAndFemalePercentages() {
 
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter the number of males registered in the class: ");
+        int males = keyboard.nextInt();
+        System.out.print("Enter the number of females registered in the class: ");
+        double females = keyboard.nextInt();
+        double studentsInClass = males + females;
+        double malesPercentages = males / studentsInClass;
+        double femalesPercentages = females / studentsInClass;
+
+        System.out.printf("There are" + malesPercentages + "percentage of males in the class.");
+        System.out.printf("There are" + femalesPercentages + "percentage of females in the class.");
     }
 }
-
-
