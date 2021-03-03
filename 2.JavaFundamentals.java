@@ -10,7 +10,9 @@ class JavaFundamentals {
         // salesPrediction();
         // salesTax();
         // cookieCalories();
-        milesPerGallon();
+        // milesPerGallon();
+        // testAvarage();
+        circuitBoardProfit();
     }
 
     /////////////////////////////////
@@ -140,4 +142,29 @@ double result = milesDriven/gasUsed;
 
 System.out.println("Car miles per gallon is: " + result);
     }
+
+    public static void testAvarage() {
+
+Scanner keyboard = new Scanner(System.in);
+System.out.println("Enter your first test score: ");
+double firstScore = keyboard.nextDouble();
+System.out.println("Enter your second test score: ");
+double secondScore = keyboard.nextDouble();
+System.out.println("Enter your third test score: ");
+double thirdScore = keyboard.nextDouble();
+
+double avarage = (firstScore + secondScore + thirdScore)/3;
+
+System.out.println("The first score is: " + firstScore);
+System.out.println("The second score is: " + secondScore);
+System.out.println("The third score is: " + thirdScore);
+System.out.printf("The avarege score is: " + "%.2f", + avarage);
+
+    }
+
+    public static void circuitBoardProfit() {
+
+        
+    }
 }
+
