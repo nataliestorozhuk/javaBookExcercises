@@ -18,7 +18,8 @@ class JavaFundamentals {
         // maleAndFemalePercentages();
         // stockCommission();
         // energyDrinkConsumption();
-        ingredientAdjuster();
+        // ingredientAdjuster();
+        stockTransactionProgram();
     }
 
     /////////////////////////////////
@@ -281,7 +282,38 @@ class JavaFundamentals {
         System.out.println(cookies * sugarPerCookie + " cups of sugar needed");
         System.out.println(cookies * butterPerCookie + " cups of butter needed");
         System.out.println(cookies * flourPerCookie + " cups of flour needed");
-       
+
+    }
+
+    public static void stockTransactionProgram() {
+
+        double sharesPurchsed = 1000.0;
+        double amountPerShare = 32.87;
+        double brokersCommmission = 0.02;
+
+        double totalPaidForStock = sharesPurchsed * amountPerShare;
+        double commissionAmount = totalPaidForStock * brokersCommmission;
+        double bought = totalPaidForStock - commissionAmount;
+
+        double sharesSold = 1000.0;
+        double amountSoldPerShare = 33.92;
+        double brokersCommmissionSold = 0.02;
+
+        double amountStockSoldFor = sharesSold * amountSoldPerShare;
+        double commissionAmountSold = amountStockSoldFor * brokersCommmissionSold;
+        double sold = amountStockSoldFor - commissionAmountSold;
+
+        double profit = sold - bought;
+
+        System.out.println("The amount of money Joe paid for the stock is: " + totalPaidForStock);
+        System.out.println(
+                "The amount of commissions Joe paid his broker when he bought the stock is: " + commissionAmount);
+        System.out.println("The amount of money that Joe sold the stock for is: " + amountStockSoldFor);
+        System.out.println(
+                "The amount of commissions Joe paid his broker when he sold the stock is:  " + commissionAmountSold);
+        System.out.println(
+                "The amount of profit that Joe made after selling his stock and paying the two commisions to his broker is: "
+                        + profit);
 
     }
 }
