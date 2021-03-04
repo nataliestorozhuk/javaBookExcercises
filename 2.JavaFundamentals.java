@@ -15,7 +15,8 @@ class JavaFundamentals {
         // circuitBoardProfit();
         // stringManipulator();
         // restaurantBill();
-        maleAndFemalePercentages();
+        // maleAndFemalePercentages();
+        stockCommission();
     }
 
     /////////////////////////////////
@@ -223,5 +224,22 @@ class JavaFundamentals {
 
         System.out.printf("There are" + malesPercentages + "percentage of males in the class.");
         System.out.printf("There are" + femalesPercentages + "percentage of females in the class.");
+    }
+
+    public static void stockCommission() {
+        
+        double sharesOfStock = 600;
+        double pricePerShare = 21.27;
+        double commissionPerTransaction = 0.02;
+
+        double amountPaidForStock = sharesOfStock * pricePerShare;
+        double amountOfCommission = amountPaidForStock * commissionPerTransaction;
+        double total = amountPaidForStock + amountOfCommission;
+
+        System.out.println("The amount paid for the stock alone is: " + amountPaidForStock);
+        System.out.println("The amount of the  commission is: " + amountOfCommission);
+        System.out.println("The total amount paid is: " + total);
+
+
     }
 }
