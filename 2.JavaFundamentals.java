@@ -16,7 +16,9 @@ class JavaFundamentals {
         // stringManipulator();
         // restaurantBill();
         // maleAndFemalePercentages();
-        stockCommission();
+        // stockCommission();
+        // energyDrinkConsumption();
+        ingredientAdjuster();
     }
 
     /////////////////////////////////
@@ -227,7 +229,7 @@ class JavaFundamentals {
     }
 
     public static void stockCommission() {
-        
+
         double sharesOfStock = 600;
         double pricePerShare = 21.27;
         double commissionPerTransaction = 0.02;
@@ -240,6 +242,28 @@ class JavaFundamentals {
         System.out.println("The amount of the  commission is: " + amountOfCommission);
         System.out.println("The total amount paid is: " + total);
 
+    }
+
+    public static void energyDrinkConsumption() {
+
+        int customerSurveyed = 12467;
+        double oneOrTwoDrinks = 0.14;
+        double citrusDrink = 0.64; 
+
+        // (int) helps to convert double into int. This process calls casting
+        double customersOneOrMoreDrinks = (int) (customerSurveyed * oneOrTwoDrinks);
+        double customerCitrusDrink = (int) (customersOneOrMoreDrinks * citrusDrink);
+
+        System.out.println(
+                "The approximate number of customers in the survey who purchase one or more energy drinks per week are: "
+                        + customersOneOrMoreDrinks);
+        System.out.println(
+                "The approximate number of customers in the survey who prefer citrus flavored energy drinks are: "
+                        + customerCitrusDrink);
+
+    }
+
+    public static void ingredientAdjuster() {
 
     }
 }
