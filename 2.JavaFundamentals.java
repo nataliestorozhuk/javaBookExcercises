@@ -248,11 +248,11 @@ class JavaFundamentals {
 
         int customerSurveyed = 12467;
         double oneOrTwoDrinks = 0.14;
-        double citrusDrink = 0.64; 
+        double citrusDrink = 0.64;
 
-        // (int) helps to convert double into int. This process calls casting
-        double customersOneOrMoreDrinks = (int) (customerSurveyed * oneOrTwoDrinks);
-        double customerCitrusDrink = (int) (customersOneOrMoreDrinks * citrusDrink);
+        // (int) helps to convert double into int. This process is called casting
+        int customersOneOrMoreDrinks = (int) (customerSurveyed * oneOrTwoDrinks);
+        int customerCitrusDrink = (int) (customersOneOrMoreDrinks * citrusDrink);
 
         System.out.println(
                 "The approximate number of customers in the survey who purchase one or more energy drinks per week are: "
@@ -264,6 +264,24 @@ class JavaFundamentals {
     }
 
     public static void ingredientAdjuster() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter the amount of cookies you want to make: ");
+        int cookies = keyboard.nextInt();
+
+        double sugarNeeded = 1.5;
+        double butterNeeded = 1.0;
+        double flourNeeded = 2.75;
+        double totalCookies = 48.0;
+
+        double sugarPerCookie = sugarNeeded / totalCookies;
+        double butterPerCookie = butterNeeded / totalCookies;
+        double flourPerCookie = flourNeeded / totalCookies;
+
+        System.out.println(cookies * sugarPerCookie + " cups of sugar needed");
+        System.out.println(cookies * butterPerCookie + " cups of butter needed");
+        System.out.println(cookies * flourPerCookie + " cups of flour needed");
+       
 
     }
 }
