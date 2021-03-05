@@ -19,7 +19,8 @@ class JavaFundamentals {
         // stockCommission();
         // energyDrinkConsumption();
         // ingredientAdjuster();
-        stockTransactionProgram();
+        // stockTransactionProgram();
+        plantingGrapevines();
     }
 
     /////////////////////////////////
@@ -314,6 +315,26 @@ class JavaFundamentals {
         System.out.println(
                 "The amount of profit that Joe made after selling his stock and paying the two commisions to his broker is: "
                         + profit);
+
+    }
+
+    public static void plantingGrapevines() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter length of the row, in feet: ");  
+        double length = keyboard.nextDouble();
+        System.out.print("Enter amount of space used by an end-post assembly, in feet: "); 
+        double endPostAssembly = keyboard.nextDouble();
+        System.out.print("Enter amount of space between the vines, in feet: "); 
+        double vinesSpace = keyboard.nextDouble();
+
+        double grapevinesInRow = (length - (2 * endPostAssembly))/vinesSpace;
+
+        System.out.println("The numbers of grapevines that will fit in the row are: " + grapevinesInRow);
+
+
+
+
 
     }
 }
