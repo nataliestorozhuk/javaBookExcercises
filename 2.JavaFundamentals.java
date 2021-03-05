@@ -20,7 +20,8 @@ class JavaFundamentals {
         // energyDrinkConsumption();
         // ingredientAdjuster();
         // stockTransactionProgram();
-        plantingGrapevines();
+        // plantingGrapevines();
+        compoundInterest();
     }
 
     /////////////////////////////////
@@ -321,20 +322,41 @@ class JavaFundamentals {
     public static void plantingGrapevines() {
 
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("Enter length of the row, in feet: ");  
+        System.out.print("Enter length of the row, in feet: ");
         double length = keyboard.nextDouble();
-        System.out.print("Enter amount of space used by an end-post assembly, in feet: "); 
+        System.out.print("Enter amount of space used by an end-post assembly, in feet: ");
         double endPostAssembly = keyboard.nextDouble();
-        System.out.print("Enter amount of space between the vines, in feet: "); 
+        System.out.print("Enter amount of space between the vines, in feet: ");
         double vinesSpace = keyboard.nextDouble();
 
-        double grapevinesInRow = (length - (2 * endPostAssembly))/vinesSpace;
+        double grapevinesInRow = (length - (2 * endPostAssembly)) / vinesSpace;
 
         System.out.println("The numbers of grapevines that will fit in the row are: " + grapevinesInRow);
 
+    }
+
+    public static void compoundInterest() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter the amount of principal originally deposited into the account: ");
+        double principalOriginallyDeposited = keyboard.nextDouble();
+        System.out.print("Enter the annual interest rate paid by the account: ");
+        double annualInterest = keyboard.nextDouble();
+
+        System.out.print("Enter the number of times per year that the interest is compounded: ");
+        double interestCompounded = keyboard.nextDouble();
+        System.out.print("Enter number of years the account will be left to earn interest: ");
+        double numberOfYears = keyboard.nextDouble();
+
+        double annualIntInPercent = annualInterest / 100;
+
+        double a = (annualIntInPercent/interestCompounded) + 1;
+        double b = interestCompounded * numberOfYears;
+        double powerOf = Math.pow(a, b);
+        double resultNeeded = principalOriginallyDeposited * powerOf;
 
 
-
+        System.out.printf("The amount of money that will be in the account after the specified number of years is: " + "%.2f", resultNeeded);
 
     }
 }
