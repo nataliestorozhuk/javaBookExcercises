@@ -2,10 +2,9 @@ class Program {
     public static void main(String[] args) {
         
         //Chapter 2: 
-        JavaFundamentals.run();        
+        // JavaFundamentals.run();        
         //Chapter 3: 
-        
- 
+        DecisionStructures.run();
 
 
     }
