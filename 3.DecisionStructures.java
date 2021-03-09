@@ -1,14 +1,16 @@
+import java.util.Scanner;
 
 class DecisionStructures {
 
     public static void run() {
-        ifElseStatement1();
+        // ifElseStatement();
+        // ifElseStatement1();
+        ifElseStatement2();
     }
 
     public static void ifElseStatement() {
         double amount1 = 5.0;
         double amount2 = 55;
-       
 
         if (amount1 >= 10)
 
@@ -18,15 +20,28 @@ class DecisionStructures {
 
     }
 
-    public static void ifElseStatement1 () {
-double number = 19;
+    public static void ifElseStatement1() {
+        double number = 19;
 
-if (number<=100){
-    System.out.println("The number is valid");
-}
-else {
-    System.out.println("The number is invalid");
-}
+        if (number <= 100) {
+            System.out.println("The number is valid");
+        } else {
+            System.out.println("The number is invalid");
+        }
 
-    } 
+    }
+
+    public static void ifElseStatement2() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter the temperature outside: ");
+        double temperature = keyboard.nextDouble();
+
+        if (temperature >= -50)
+            if (temperature <= 150) {
+                System.out.println("The number is valid");
+            } else {
+                System.out.println("The number is wrong");
+            }
+    }
 }
