@@ -5,7 +5,8 @@ class DecisionStructures {
     public static void run() {
         // ifElseStatement();
         // ifElseStatement1();
-        ifElseStatement2();
+        // ifElseStatement2();
+        ifElseStatement3();
     }
 
     public static void ifElseStatement() {
@@ -44,4 +45,19 @@ class DecisionStructures {
                 System.out.println("The number is wrong");
             }
     }
+
+    public static void ifElseStatement3(){
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter the numbers of hours outside: ");
+        double hours = keyboard.nextDouble();
+
+        if (hours >= 0 && hours <=80){
+            System.out.println("The number is valid");
+        }
+        else{
+            System.out.println("The number is not valid");
+        }
+    }
+
+
 }
