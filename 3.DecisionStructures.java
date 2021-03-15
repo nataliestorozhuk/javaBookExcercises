@@ -7,7 +7,8 @@ class DecisionStructures {
         // ifElseStatement1();
         // ifElseStatement2();
         // ifElseStatement3();
-        convertingIfElseIntoSwich();
+        // convertingIfElseIntoSwich();
+        romanNumerals();
     }
 
     public static void ifElseStatement() {
@@ -82,4 +83,46 @@ class DecisionStructures {
 
     }
 
+    public static void romanNumerals() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter a number within the range of 1 through 10: ");
+        int number = keyboard.nextInt();
+
+        switch (number) {
+            case 1:
+            System.out.println("You selected I. ");
+            break;
+            case 2:
+            System.out.println("You selected II. ");
+            break;
+            case 3:
+            System.out.println("You selected III. ");
+            break;
+            case 4:
+            System.out.println("You selected IV. ");
+            break;
+            case 5:
+            System.out.println("You selected V. ");
+            break;
+            case 6:
+            System.out.println("You selected VI. ");
+            break;
+            case 7:
+            System.out.println("You selected VII. ");
+            break;
+            case 8:
+            System.out.println("You selected VIII. ");
+            break;
+            case 9:
+            System.out.println("You selected IX. ");
+            break;
+            case 10:
+            System.out.println("You selected X. ");
+            break;
+            default:
+            System.out.println("Error message. ");
+
+        }
+
+    }
 }
