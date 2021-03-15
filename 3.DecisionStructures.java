@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.lang.*;
 
 class DecisionStructures {
 
@@ -9,7 +10,9 @@ class DecisionStructures {
         // ifElseStatement3();
         // convertingIfElseIntoSwich();
         // romanNumerals();
-        magicDates();
+        // magicDates();
+        bodyMassIndex();
+
     }
 
     public static void ifElseStatement() {
@@ -136,12 +139,36 @@ class DecisionStructures {
         String year = keyboard.next();
         var converting = Integer.parseInt(year.substring(2));
 
-        if (converting == month *day){
+        if (converting == month * day) {
 
-        // if (month * day == year) {
+            // if (month * day == year) {
             System.out.println("The date is magic");
         } else {
             System.out.println("The date is not magic");
         }
+    }
+
+    public static void bodyMassIndex() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter your weight: ");
+        double weight = keyboard.nextDouble();
+        System.out.println("Please enter your height in inches: ");
+        double height = keyboard.nextDouble();
+        double sqrtHeight = Math.pow(height, 2);
+
+        double bMI = weight * (703 / sqrtHeight);
+
+    if (bMI >=18.5 && bMI <=25){
+        System.out.println("Your weight is optimal. ");
+    }
+    else if (bMI <18.5){
+        System.out.println("You are considered underweight. ");
+    }
+     else if (bMI >25){
+        System.out.println("You are considered overweight. ");
+     }
+else{
+    System.out.println("Something went wrong. ");
+}
     }
 }
