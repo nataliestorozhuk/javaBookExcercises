@@ -8,7 +8,8 @@ class DecisionStructures {
         // ifElseStatement2();
         // ifElseStatement3();
         // convertingIfElseIntoSwich();
-        romanNumerals();
+        // romanNumerals();
+        magicDates();
     }
 
     public static void ifElseStatement() {
@@ -124,5 +125,21 @@ class DecisionStructures {
 
         }
 
+    }
+    public static void magicDates() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter a month (in numeric form) of your DOB: ");
+        int month = keyboard.nextInt();
+        System.out.println("Please enter a day of your DOB: ");
+        int day = keyboard.nextInt();
+        System.out.println("Please enter a two-digit year of your DOB: ");
+        int year = keyboard.nextInt();
+
+        if (month * day == year){
+            System.out.println("The date is magic");
+        }
+        else{
+            System.out.println("The date is not magic");
+        }
     }
 }
