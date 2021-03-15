@@ -49,35 +49,34 @@ class DecisionStructures {
             }
     }
 
-    public static void ifElseStatement3(){
+    public static void ifElseStatement3() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Please enter the numbers of hours outside: ");
         double hours = keyboard.nextDouble();
 
-        if (hours >= 0 && hours <=80){
+        if (hours >= 0 && hours <= 80) {
             System.out.println("The number is valid");
-        }
-        else{
+        } else {
             System.out.println("The number is not valid");
         }
     }
 
-    public static void convertingIfElseIntoSwich(){
+    public static void convertingIfElseIntoSwich() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Please select numbers from 1-4: ");
         int number = keyboard.nextInt();
 
-        switch (number){
-            case 1:
+        switch (number) {
+        case 1:
             System.out.println("You selected 1. ");
             break;
-            case 2, 3:
+        case 2, 3:
             System.out.println("You selected 2 or 3. ");
             break;
-            case 4:
+        case 4:
             System.out.println("You selected 4. ");
             break;
-            default:
+        default:
             System.out.println("Select again please. ");
 
         }
@@ -90,55 +89,58 @@ class DecisionStructures {
         int number = keyboard.nextInt();
 
         switch (number) {
-            case 1:
+        case 1:
             System.out.println("You selected I. ");
             break;
-            case 2:
+        case 2:
             System.out.println("You selected II. ");
             break;
-            case 3:
+        case 3:
             System.out.println("You selected III. ");
             break;
-            case 4:
+        case 4:
             System.out.println("You selected IV. ");
             break;
-            case 5:
+        case 5:
             System.out.println("You selected V. ");
             break;
-            case 6:
+        case 6:
             System.out.println("You selected VI. ");
             break;
-            case 7:
+        case 7:
             System.out.println("You selected VII. ");
             break;
-            case 8:
+        case 8:
             System.out.println("You selected VIII. ");
             break;
-            case 9:
+        case 9:
             System.out.println("You selected IX. ");
             break;
-            case 10:
+        case 10:
             System.out.println("You selected X. ");
             break;
-            default:
+        default:
             System.out.println("Error message. ");
 
         }
 
     }
+
     public static void magicDates() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Please enter a month (in numeric form) of your DOB: ");
         int month = keyboard.nextInt();
         System.out.println("Please enter a day of your DOB: ");
         int day = keyboard.nextInt();
-        System.out.println("Please enter a two-digit year of your DOB: ");
-        int year = keyboard.nextInt();
+        System.out.println("Please enter a year of your DOB: ");
+        String year = keyboard.next();
+        var converting = Integer.parseInt(year.substring(2));
 
-        if (month * day == year){
+        if (converting == month *day){
+
+        // if (month * day == year) {
             System.out.println("The date is magic");
-        }
-        else{
+        } else {
             System.out.println("The date is not magic");
         }
     }
