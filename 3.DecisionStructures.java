@@ -20,7 +20,8 @@ class DecisionStructures {
         // massAndWeight();
         // timeCalculator();
         // sortedNames();
-        softwareSales();
+        // softwareSales();
+        shippingCharges();
 
     }
 
@@ -290,5 +291,19 @@ class DecisionStructures {
             System.out.printf(". The total amount of the purchase after discount is: " + "%.2f", total);
         }
 
+    }
+
+    public static void shippingCharges() {
+        double packageWeight = 18.15;
+
+        if (packageWeight <= 2) {
+            System.out.printf("The shipping charges are: " + "%.2f", packageWeight * 1.10);
+        } else if (packageWeight >= 2 && packageWeight <= 6) {
+            System.out.printf("The shipping charges are: " + "%.2f", packageWeight * 2.20);
+        } else if (packageWeight >= 6 && packageWeight <= 10) {
+            System.out.printf("The shipping charges are: " + "%.2f", packageWeight * 3.70);
+        } else if (packageWeight > 10) {
+            System.out.printf("The shipping charges are: " + "%.2f", packageWeight * 3.80);
+        }
     }
 }
