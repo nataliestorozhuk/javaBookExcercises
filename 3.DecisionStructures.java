@@ -12,7 +12,8 @@ class DecisionStructures {
         // romanNumerals();
         // magicDates();
         // bodyMassIndex();
-        salesPrediction();
+        // salesPrediction();
+        massAndWeight();
 
     }
 
@@ -179,6 +180,24 @@ class DecisionStructures {
 
         double x = totalSales * percent;
         System.out.println("The annual amount is: " + x);
+
+    }
+
+    public static void massAndWeight() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter an object's mass (in kilograms): ");
+        double objectsMass = keyboard.nextDouble();
+
+        double weight = objectsMass * 9.8;
+
+        if (weight > 1000) {
+            System.out.println("The object is too heavy");
+        } else if (weight < 10) {
+            System.out.println("The object is too light");
+        }
+        else {
+            System.out.println("The objects weight is normal");
+        }
 
     }
 }
