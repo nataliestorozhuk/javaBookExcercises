@@ -11,7 +11,8 @@ class DecisionStructures {
         // convertingIfElseIntoSwich();
         // romanNumerals();
         // magicDates();
-        bodyMassIndex();
+        // bodyMassIndex();
+        salesPrediction();
 
     }
 
@@ -158,17 +159,26 @@ class DecisionStructures {
 
         double bMI = weight * (703 / sqrtHeight);
 
-    if (bMI >=18.5 && bMI <=25){
-        System.out.println("Your weight is optimal. ");
+        if (bMI >= 18.5 && bMI <= 25) {
+            System.out.println("Your weight is optimal. ");
+        } else if (bMI < 18.5) {
+            System.out.println("You are considered underweight. ");
+        } else if (bMI > 25) {
+            System.out.println("You are considered overweight. ");
+        } else {
+            System.out.println("Something went wrong. ");
+        }
     }
-    else if (bMI <18.5){
-        System.out.println("You are considered underweight. ");
-    }
-     else if (bMI >25){
-        System.out.println("You are considered overweight. ");
-     }
-else{
-    System.out.println("Something went wrong. ");
-}
+
+    public static void salesPrediction() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter amount of total sales: ");
+        double totalSales = keyboard.nextDouble();
+
+        double percent = 0.23;
+
+        double x = totalSales * percent;
+        System.out.println("The annual amount is: " + x);
+
     }
 }
