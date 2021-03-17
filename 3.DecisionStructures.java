@@ -13,7 +13,8 @@ class DecisionStructures {
         // magicDates();
         // bodyMassIndex();
         // salesPrediction();
-        massAndWeight();
+        // massAndWeight();
+        timeCalculator();
 
     }
 
@@ -194,10 +195,30 @@ class DecisionStructures {
             System.out.println("The object is too heavy");
         } else if (weight < 10) {
             System.out.println("The object is too light");
-        }
-        else {
+        } else {
             System.out.println("The objects weight is normal");
         }
 
+    }
+
+    public static void timeCalculator() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter a number of seconds: ");
+        double seconds = keyboard.nextDouble();
+
+        int minute = 60;
+        double hour = 3600;
+        double day = 86400;
+        double number = seconds / minute;
+        double number1 = seconds / hour;
+        double number2 = seconds / day;
+
+        if (seconds >= 60 && seconds < 3600) {
+            System.out.println("There are " + number + "  minute(s). ");
+        } else if (seconds >= 3600 && seconds < 86400) {
+            System.out.println("There are " + number1 + "  hour(s). ");
+        } else if (seconds >= 86400) {
+            System.out.println("There are " + number2 + "  day(s). ");
+        }
     }
 }
