@@ -209,16 +209,16 @@ class DecisionStructures {
         int minute = 60;
         double hour = 3600;
         double day = 86400;
-        double number = seconds / minute;
-        double number1 = seconds / hour;
-        double number2 = seconds / day;
+        double minutes = seconds / minute;
+        double hours = seconds / hour;
+        double days = seconds / day;
 
         if (seconds >= 60 && seconds < 3600) {
-            System.out.println("There are " + number + "  minute(s). ");
+            System.out.println("There are " + minutes + "  minute(s). ");
         } else if (seconds >= 3600 && seconds < 86400) {
-            System.out.println("There are " + number1 + "  hour(s). ");
+            System.out.println("There are " + hours + "  hour(s). ");
         } else if (seconds >= 86400) {
-            System.out.println("There are " + number2 + "  day(s). ");
+            System.out.println("There are " + days + "  day(s). ");
         }
     }
 }
