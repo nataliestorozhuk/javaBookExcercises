@@ -1,5 +1,8 @@
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 import java.lang.*;
+import java.util.*;
 
 class DecisionStructures {
 
@@ -14,7 +17,8 @@ class DecisionStructures {
         // bodyMassIndex();
         // salesPrediction();
         // massAndWeight();
-        timeCalculator();
+        // timeCalculator();
+        sortedNames();
 
     }
 
@@ -221,4 +225,35 @@ class DecisionStructures {
             System.out.println("There are " + days + "  day(s). ");
         }
     }
+
+    public static void sortedNames() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter first name: ");
+        String name1 = keyboard.next();
+        System.out.println("Please enter second name: ");
+        String name2 = keyboard.next();
+        System.out.println("Please enter third name: ");
+        String name3 = keyboard.next();
+
+
+        ArrayList<String> arr = new ArrayList<String>();
+        arr.add(name1);
+        arr.add(name2);
+        arr.add(name3);
+
+        // this method is used to sort an array
+        Collections.sort(arr);
+
+        System.out.println(arr);
+
+        // // for (String string : arr) {
+        // //     System.out.println(arr);
+            
+        // }
+
+        
+
+ 
+    }
+
 }
