@@ -21,7 +21,8 @@ class DecisionStructures {
         // timeCalculator();
         // sortedNames();
         // softwareSales();
-        shippingCharges();
+        // shippingCharges();
+        fatGramCalculator();
 
     }
 
@@ -304,6 +305,23 @@ class DecisionStructures {
             System.out.printf("The shipping charges are: " + "%.2f", packageWeight * 3.70);
         } else if (packageWeight > 10) {
             System.out.printf("The shipping charges are: " + "%.2f", packageWeight * 3.80);
+        }
+    }
+
+    public static void fatGramCalculator() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter the number of calories in a food item:  ");
+        double calories = keyboard.nextDouble();
+        System.out.println("Please enter fat grams in a food item:  ");
+        double fatGram = keyboard.nextDouble();
+
+        double caloriesFromFat = fatGram * 9;
+        double percentageOfCalories = caloriesFromFat / calories;
+
+        if (percentageOfCalories < 30) {
+            System.out.println("The food is low in fat");
+        } else if (percentageOfCalories > calories) {
+            System.out.println("The imput is invalid");
         }
     }
 }
