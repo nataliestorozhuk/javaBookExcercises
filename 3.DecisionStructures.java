@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
+
 import java.lang.*;
 import java.util.*;
 
@@ -18,7 +19,8 @@ class DecisionStructures {
         // salesPrediction();
         // massAndWeight();
         // timeCalculator();
-        sortedNames();
+        // sortedNames();
+        softwareSales();
 
     }
 
@@ -235,25 +237,58 @@ class DecisionStructures {
         System.out.println("Please enter third name: ");
         String name3 = keyboard.next();
 
+        // ArrayList<String> arr = new ArrayList<String>();
+        // arr.add(name1);
+        // arr.add(name2);
+        // arr.add(name3);
 
-        ArrayList<String> arr = new ArrayList<String>();
-        arr.add(name1);
-        arr.add(name2);
-        arr.add(name3);
+        // Inline initialization of an ArrayList
+
+        // ArrayList<String> arr = new ArrayList<String>(Arrays.asList(name1, name2,
+        // name3));
+
+        // String[] arr2 = {name1, name2, name3};
+
+        List<String> namesArr = List.of(name1, name2, name3);
+        Collections.sort(namesArr);
 
         // this method is used to sort an array
-        Collections.sort(arr);
+        // Collections.sort(namesArr);
 
-        System.out.println(arr);
+        // System.out.println(arr);
+        // int count = 0;
+        for (String n : namesArr) {
+            System.out.println(n);
+            // count++;
+        }
 
-        // // for (String string : arr) {
-        // //     System.out.println(arr);
-            
-        // }
-
-        
-
- 
     }
 
+    public static void softwareSales() {
+        int packages = 51;
+        double packageRetail = 99;
+
+        if (packages >= 10 && packages <= 19) {
+            double discount = packages * packageRetail * 0.2;
+            double total = packageRetail * packages - discount;
+            System.out.printf("The amount of discount is: " + "%.2f", discount);
+            System.out.printf(". The total amount of the purchase after discount is: " + "%.2f", total);
+        } else if (packages >= 20 && packages <= 49) {
+            double discount = packages * packageRetail * 0.3;
+            double total = packageRetail * packages - discount;
+            System.out.printf("The amount of discount is: " + "%.2f", discount);
+            System.out.printf(". The total amount of the purchase after discount is: " + "%.2f", total);
+        } else if (packages >= 50 && packages <= 99) {
+            double discount = packages * packageRetail * 0.4;
+            double total = packageRetail * packages - discount;
+            System.out.printf("The amount of discount is: " + "%.2f", discount);
+            System.out.printf(". The total amount of the purchase after discount is: " + "%.2f", total);
+        } else if (packages >= 100) {
+            double discount = packages * packageRetail * 0.5;
+            double total = packageRetail * packages - discount;
+            System.out.printf("The amount of discount is: " + "%.2f", discount);
+            System.out.printf(". The total amount of the purchase after discount is: " + "%.2f", total);
+        }
+
+    }
 }
