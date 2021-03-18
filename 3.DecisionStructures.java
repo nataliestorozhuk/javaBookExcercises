@@ -22,7 +22,8 @@ class DecisionStructures {
         // sortedNames();
         // softwareSales();
         // shippingCharges();
-        fatGramCalculator();
+        // fatGramCalculator();
+        runningTheRace();
 
     }
 
@@ -322,6 +323,32 @@ class DecisionStructures {
             System.out.println("The food is low in fat");
         } else if (percentageOfCalories > calories) {
             System.out.println("The imput is invalid");
+        }
+    }
+
+    public static void runningTheRace() {
+        String runner1 = "Vasya";
+        String runner2 = "Sam";
+        String runner3 = "Peter";
+
+        double time1 = 3;
+        double time2 = 18.1;
+        double time3 = 1;
+
+        if (time1 < time2 && time1 < time3 && time2 < time3) {
+            System.out.println(runner1 + time1 + "\n" + runner2 + time2 + "\n" + runner3 + time3);
+        } else if (time1 < time2 && time1 < time3 && time3 < time2) {
+            System.out.println(runner1 + time1 + "\n" + runner3 + time3 + "\n" + runner2 + time2);
+        }
+        if (time2 < time1 && time2 < time3 && time1 < time3) {
+            System.out.println(runner2 + time2 + "\n" + runner1 + time1 + "\n" + runner3 + time3);
+        } else if (time2 < time1 && time2 < time3 && time3 < time1) {
+            System.out.println(runner2 + time2 + "\n" + runner3 + time3 + "\n" + runner1 + time1);
+        }
+        if (time3 < time1 && time3 < time2 && time1 < time2) {
+            System.out.println(runner3 + time3 + "\n" + runner1 + time1 + "\n" + runner2 + time2);
+        } else if (time3 < time1 && time3 < time2 && time2 < time1) {
+            System.out.println(runner3 + time3 + "\n" + runner2 + time2 + "\n" + runner1 + time1);
         }
     }
 }
