@@ -24,7 +24,8 @@ class DecisionStructures {
         // shippingCharges();
         // fatGramCalculator();
         // runningTheRace();
-        theSpeedOfSound();
+        // theSpeedOfSound();
+        mobileServiceProvider();
 
     }
 
@@ -364,7 +365,43 @@ class DecisionStructures {
         double steelDistance = 18000;
 
         System.out.printf("The amount of time for air will take: " + "%.2f", airDistanse / airSpeedPerSecond);
-        System.out.printf("\n"+ "The amount of time for water will take: " + "%.2f", waterDistanse / waterSpeedPerSecond);
-        System.out.printf("\n"+ "The amount of time for steel will take: " + "%.2f", steelDistance / steelSpeedPerSecond);
+        System.out.printf("\n" + "The amount of time for water will take: " + "%.2f",
+                waterDistanse / waterSpeedPerSecond);
+        System.out.printf("\n" + "The amount of time for steel will take: " + "%.2f",
+                steelDistance / steelSpeedPerSecond);
+    }
+
+    public static void mobileServiceProvider() {
+
+        double aPerMonth = 39.99;
+        double aMinutes = 450;
+        double aPerMinute = 0.45;
+
+        double bPerMonth = 59.99;
+        double bMinutes = 900;
+        double bPerMinute = 0.40;
+
+        double cPerMonth = 69.99;
+
+        char letterOfPackage = 'C';
+        double numberOfMinutes = 912;
+
+        if (letterOfPackage == 'A' && numberOfMinutes <= 450){
+            System.out.println("The total charges are: " + aPerMonth + ".");
+        }
+        else if(letterOfPackage == 'A' && numberOfMinutes > 450){
+            double aTotal = aPerMinute * (numberOfMinutes - aMinutes) + aPerMonth;
+            System.out.println("The total charges are: " + aTotal + ".");
+        }
+       else if (letterOfPackage == 'B' && numberOfMinutes <= 900){
+            System.out.println("The total charges are: " + bPerMonth + ".");
+        }
+        else if (letterOfPackage == 'B' && numberOfMinutes > 900){
+            double bTotal = bPerMinute * (numberOfMinutes - bMinutes) + bPerMonth;
+            System.out.println("The total charges are: " + bTotal + ".");
+        }
+        else if (letterOfPackage == 'C'){
+            System.out.println("The total charges are: " + cPerMonth + ".");
+        }
     }
 }
