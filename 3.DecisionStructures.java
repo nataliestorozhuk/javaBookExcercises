@@ -23,7 +23,8 @@ class DecisionStructures {
         // softwareSales();
         // shippingCharges();
         // fatGramCalculator();
-        runningTheRace();
+        // runningTheRace();
+        theSpeedOfSound();
 
     }
 
@@ -350,5 +351,20 @@ class DecisionStructures {
         } else if (time3 < time1 && time3 < time2 && time2 < time1) {
             System.out.println(runner3 + time3 + "\n" + runner2 + time2 + "\n" + runner1 + time1);
         }
+    }
+
+    public static void theSpeedOfSound() {
+
+        double airSpeedPerSecond = 1100;
+        double waterSpeedPerSecond = 4900;
+        double steelSpeedPerSecond = 16400;
+
+        double airDistanse = 15000;
+        double waterDistanse = 21000;
+        double steelDistance = 18000;
+
+        System.out.printf("The amount of time for air will take: " + "%.2f", airDistanse / airSpeedPerSecond);
+        System.out.printf("\n"+ "The amount of time for water will take: " + "%.2f", waterDistanse / waterSpeedPerSecond);
+        System.out.printf("\n"+ "The amount of time for steel will take: " + "%.2f", steelDistance / steelSpeedPerSecond);
     }
 }
