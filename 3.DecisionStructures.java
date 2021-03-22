@@ -25,7 +25,8 @@ class DecisionStructures {
         // fatGramCalculator();
         // runningTheRace();
         // theSpeedOfSound();
-        mobileServiceProvider();
+        // mobileServiceProvider();
+        bankCharges();
 
     }
 
@@ -386,22 +387,42 @@ class DecisionStructures {
         char letterOfPackage = 'C';
         double numberOfMinutes = 912;
 
-        if (letterOfPackage == 'A' && numberOfMinutes <= 450){
+        if (letterOfPackage == 'A' && numberOfMinutes <= 450) {
             System.out.println("The total charges are: " + aPerMonth + ".");
-        }
-        else if(letterOfPackage == 'A' && numberOfMinutes > 450){
+        } else if (letterOfPackage == 'A' && numberOfMinutes > 450) {
             double aTotal = aPerMinute * (numberOfMinutes - aMinutes) + aPerMonth;
             System.out.println("The total charges are: " + aTotal + ".");
-        }
-       else if (letterOfPackage == 'B' && numberOfMinutes <= 900){
+        } else if (letterOfPackage == 'B' && numberOfMinutes <= 900) {
             System.out.println("The total charges are: " + bPerMonth + ".");
-        }
-        else if (letterOfPackage == 'B' && numberOfMinutes > 900){
+        } else if (letterOfPackage == 'B' && numberOfMinutes > 900) {
             double bTotal = bPerMinute * (numberOfMinutes - bMinutes) + bPerMonth;
             System.out.println("The total charges are: " + bTotal + ".");
-        }
-        else if (letterOfPackage == 'C'){
+        } else if (letterOfPackage == 'C') {
             System.out.println("The total charges are: " + cPerMonth + ".");
         }
+    }
+
+    public static void bankCharges() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter the numher of checks written for the month: ");
+        int checksPerMonth = keyboard.nextInt();
+
+        double feePerMonth = 10;
+
+        if (checksPerMonth < 20) {
+            double checks = checksPerMonth * 0.10 + feePerMonth;
+            System.out.printf("The bank's service fees for the month is: " + "%.2f", checks);
+        } else if (checksPerMonth >= 20 && checksPerMonth <= 39) {
+            double checks1 = checksPerMonth * 0.08 + feePerMonth;
+            System.out.printf("The bank's service fees for the month is: " + "%.2f", checks1);
+        } else if (checksPerMonth >= 40 && checksPerMonth <= 59) {
+            double checks2 = checksPerMonth * 0.06 + feePerMonth;
+            System.out.printf("The bank's service fees for the month is: " + "%.2f", checks2);
+        } else if (checksPerMonth >= 60) {
+            double checks3 = checksPerMonth * 0.04 + feePerMonth;
+            System.out.printf("The bank's service fees for the month is: " + "%.2f", checks3);
+        }
+
     }
 }
