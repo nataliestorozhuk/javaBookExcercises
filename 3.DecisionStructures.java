@@ -26,7 +26,8 @@ class DecisionStructures {
         // runningTheRace();
         // theSpeedOfSound();
         // mobileServiceProvider();
-        bankCharges();
+        // bankCharges();
+        bookClubPoints();
 
     }
 
@@ -422,6 +423,28 @@ class DecisionStructures {
         } else if (checksPerMonth >= 60) {
             double checks3 = checksPerMonth * 0.04 + feePerMonth;
             System.out.printf("The bank's service fees for the month is: " + "%.2f", checks3);
+        }
+
+    }
+
+    public static void bookClubPoints() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter the numher of books that you purchased this month: ");
+        int numOfBooks = keyboard.nextInt();
+
+        int book1 = 5;
+        int book2 = 15;
+        int book3 = 30;
+        int book4 = 60;
+
+        if (numOfBooks == 1) {
+            System.out.println("The numher of points awarded are: " + book1);
+        } else if (numOfBooks == 2) {
+            System.out.println("The numher of points awarded are: " + book2);
+        } else if (numOfBooks == 3) {
+            System.out.println("The numher of points awarded are: " + book3);
+        } else if (numOfBooks >= 4) {
+            System.out.println("The numher of points awarded are: " + book4);
         }
 
     }
