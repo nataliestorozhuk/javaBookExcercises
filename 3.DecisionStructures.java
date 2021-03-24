@@ -29,7 +29,8 @@ class DecisionStructures {
         // bankCharges();
         // bookClubPoints();
         // WifiDiagnosticTree();
-        restaurantSelector();
+        // restaurantSelector();
+        restaurantSwitch();
 
     }
 
@@ -533,15 +534,64 @@ class DecisionStructures {
         } else if (vegetarian.equalsIgnoreCase("yes") && vegan.equalsIgnoreCase("no")
                 && glutenFree.equalsIgnoreCase("no")) {
             System.out.println("Here are your restaurant choices: " + "\n" + cafe4);
-        }
-        else {
+        } else {
             System.out.print("Cook at home:)");
         }
-
-
-
-        
     }
 
+    public static void restaurantSwitch() {
+
+        String cafe1 = "Joe's Gourmet Burgers";
+        String cafe2 = "Main Street Pizza Company";
+        String cafe3 = "Corner Cafe";
+        String cafe4 = "Mama's Fine Italian";
+        String cafe5 = "The Chef's Kitchen";
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Is anyone in  your party vegetarian? ");
+
+        String vegetarian = String.valueOf(keyboard.next().equalsIgnoreCase("yes") ? 1 : 0);
+
+        System.out.println("Is anyone in  your party vegan? ");
+
+        String vegan = String.valueOf(keyboard.next().equalsIgnoreCase("yes") ? 1 : 0);
+
+        System.out.println("Is anyone in  your party gluten free? ");
+
+        String glutenFree = String.valueOf(keyboard.next().equalsIgnoreCase("yes") ? 1 : 0);
+
+        String[] inputArr = { vegetarian, vegan, glutenFree };
+        var inputArrJoin1 = String.join("", inputArr);
+
+        var inputArrJoin2 = String.join("", new String[] { vegetarian, vegan, glutenFree });
+
+        // var x = String.valueOf(vegetarian) + String.valueOf(vegan) +
+        // String.valueOf(glutenFree);
+        String message = "Here are your restaurant choices: ";
+
+        switch (inputArrJoin2) {
+
+        case "100":
+            print(message + "\n" + cafe4);
+            break;
+        case "101":
+            print(message + "\n" + cafe2);
+            break;
+        case "111":
+            print(message + "\n" + cafe3 + "\n" + cafe5);
+            break;
+        case "000":
+            print(message + "\n" + cafe1);
+            break;
+        default:
+            print("cook at home");
+
+        }
+
+    }
+
+    public static void print(String x) {
+        System.out.println(x);
+    }
 
 }
