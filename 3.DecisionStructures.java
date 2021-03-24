@@ -27,7 +27,8 @@ class DecisionStructures {
         // theSpeedOfSound();
         // mobileServiceProvider();
         // bankCharges();
-        bookClubPoints();
+        // bookClubPoints();
+        WifiDiagnosticTree();
 
     }
 
@@ -448,4 +449,59 @@ class DecisionStructures {
         }
 
     }
+
+    public static void WifiDiagnosticTree() {
+
+        String problemQuestion = "Did that fix the problem?";
+        String successMessage = "I am glad its working";
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Reboot the computer and try to connect");
+        String ok = keyboard.next();
+        System.out.println(problemQuestion);
+        String problem = keyboard.next();
+
+        if (problem.equalsIgnoreCase("no")) {
+            System.out.println("Reboot the router and try to connect");
+
+        } else if (problem.equalsIgnoreCase("yes")) {
+            System.out.println(successMessage);
+            return;
+        }
+
+        System.out.println(problemQuestion);
+        problem = keyboard.next();
+
+        if (problem.equalsIgnoreCase("no"))
+
+        {
+            System.out.println("Make sure the cables between the router & modern areplugged in fermly.");
+        } else if (problem.equalsIgnoreCase("yes")) {
+            System.out.println(successMessage);
+            return;
+        }
+
+        System.out.println(problemQuestion);
+        problem = keyboard.next();
+
+        if (problem.equalsIgnoreCase("no")) {
+            System.out.println("Move the router to a new location and try to connect. ");
+        } else if (problem.equalsIgnoreCase("yes")) {
+            System.out.println(successMessage);
+            return;
+        }
+
+        System.out.println(problemQuestion);
+        problem = keyboard.next();
+
+        if (problem.equalsIgnoreCase("no")) {
+            System.out.println("Get a new router. ");
+        } else if (problem.equalsIgnoreCase("yes")) {
+            System.out.println(successMessage);
+            return;
+        }
+        System.out.println("Get a new router. ");
+
+    }
+
 }
