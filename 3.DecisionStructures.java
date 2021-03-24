@@ -28,7 +28,8 @@ class DecisionStructures {
         // mobileServiceProvider();
         // bankCharges();
         // bookClubPoints();
-        WifiDiagnosticTree();
+        // WifiDiagnosticTree();
+        restaurantSelector();
 
     }
 
@@ -503,5 +504,44 @@ class DecisionStructures {
         System.out.println("Get a new router. ");
 
     }
+
+    public static void restaurantSelector() {
+
+        String cafe1 = "Joe's Gourmet Burgers";
+        String cafe2 = "Main Street Pizza Company";
+        String cafe3 = "Corner Cafe";
+        String cafe4 = "Mama's Fine Italian";
+        String cafe5 = "The Chef's Kitchen";
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Is anyone in  your party vegetarian? ");
+        String vegetarian = keyboard.next();
+        System.out.println("Is anyone in  your party vegan? ");
+        String vegan = keyboard.next();
+        System.out.println("Is anyone in  your party gluten free? ");
+        String glutenFree = keyboard.next();
+
+        if (vegetarian.equalsIgnoreCase("yes") && vegan.equalsIgnoreCase("no") && glutenFree.equalsIgnoreCase("yes")) {
+            System.out.println("Here are your restaurant choices: " + "\n" + cafe2 + "\n" + cafe3 + "\n" + cafe5);
+        } else if (vegetarian.equalsIgnoreCase("yes") && vegan.equalsIgnoreCase("yes")
+                && glutenFree.equalsIgnoreCase("yes")) {
+            System.out.println("Here are your restaurant choices: " + "\n" + cafe3 + "\n" + cafe5);
+
+        } else if (vegetarian.equalsIgnoreCase("no") && vegan.equalsIgnoreCase("no")
+                && glutenFree.equalsIgnoreCase("no")) {
+            System.out.println("Here are your restaurant choices: " + "\n" + cafe1);
+        } else if (vegetarian.equalsIgnoreCase("yes") && vegan.equalsIgnoreCase("no")
+                && glutenFree.equalsIgnoreCase("no")) {
+            System.out.println("Here are your restaurant choices: " + "\n" + cafe4);
+        }
+        else {
+            System.out.print("Cook at home:)");
+        }
+
+
+
+        
+    }
+
 
 }
