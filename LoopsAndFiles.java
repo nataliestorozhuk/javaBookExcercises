@@ -6,7 +6,8 @@ public class LoopsAndFiles {
 
         // whileLoopExercise();
         // doWhileLoopExercise1();
-        forLoopExercise();
+        // forLoopExercise();
+        loopExercise2();
     }
 
     public static void whileLoopExercise() {
@@ -53,5 +54,17 @@ public class LoopsAndFiles {
             System.out.println(i + " ");
         }
 
+    }
+
+    public static void loopExercise2() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Please enter a number:");
+         int number = keyboard.nextInt();
+
+        for (int i = number; i <= 10; i++) {
+
+            System.out.println(number =+ i );
+        }
     }
 }
