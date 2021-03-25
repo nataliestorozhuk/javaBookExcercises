@@ -5,7 +5,8 @@ public class LoopsAndFiles {
     public static void run() {
 
         // whileLoopExercise();
-        whileLoopExercise1();
+        // doWhileLoopExercise1();
+        forLoopExercise();
     }
 
     public static void whileLoopExercise() {
@@ -23,7 +24,7 @@ public class LoopsAndFiles {
 
     }
 
-    public static void whileLoopExercise1() {
+    public static void doWhileLoopExercise1() {
         String input;
         Scanner keyboard = new Scanner(System.in);
 
@@ -39,9 +40,18 @@ public class LoopsAndFiles {
 
             System.out.println("Do you want to perform this operation again?: ");
             System.out.println("Enter Yes for yes or No for no");
-             input = keyboard.next();
+            input = keyboard.next();
 
         } while (input.equalsIgnoreCase("yes"));
+
+    }
+
+    public static void forLoopExercise() {
+
+        for (int i = 0; i <= 60; i += 10) {
+
+            System.out.println(i + " ");
+        }
 
     }
 }
