@@ -7,7 +7,8 @@ public class LoopsAndFiles {
         // whileLoopExercise();
         // doWhileLoopExercise1();
         // forLoopExercise();
-        loopExercise2();
+        // loopExercise2();
+        nestedLoop();
     }
 
     public static void whileLoopExercise() {
@@ -60,11 +61,24 @@ public class LoopsAndFiles {
 
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Please enter a number:");
-         int number = keyboard.nextInt();
+        int number = keyboard.nextInt();
 
         for (int i = number; i <= 10; i++) {
 
-            System.out.println(number =+ i );
+            System.out.println(number = +i);
+        }
+    }
+
+    public static void nestedLoop() {
+        int cols = 15;
+        int rows = 10;
+
+        for (int row = 0; row < rows; row++) {
+
+            for (int col = 0; col < cols; col++) {
+                System.out.print("#");
+            }
+            System.out.println();
         }
     }
 }
