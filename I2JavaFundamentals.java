@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class JavaFundamentals {
+class A2JavaFundamentals {
 
     public static void run() {
 

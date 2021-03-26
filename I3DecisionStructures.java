@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.lang.*;
 import java.util.*;
 
-class DecisionStructures {
+class I3DecisionStructures {
 
     public static void run() {
         // ifElseStatement();

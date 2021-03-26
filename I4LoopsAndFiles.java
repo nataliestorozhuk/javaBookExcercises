@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LoopsAndFiles {
+public class I4LoopsAndFiles {
 
     public static void run() {
 
@@ -8,7 +8,8 @@ public class LoopsAndFiles {
         // doWhileLoopExercise1();
         // forLoopExercise();
         // loopExercise2();
-        nestedLoop();
+        // nestedLoop();
+        nestedLoop2();
     }
 
     public static void whileLoopExercise() {
@@ -74,11 +75,39 @@ public class LoopsAndFiles {
         int rows = 10;
 
         for (int row = 0; row < rows; row++) {
-
             for (int col = 0; col < cols; col++) {
                 System.out.print("#");
             }
             System.out.println();
         }
+    }
+
+    public static void nestedLoop2() {
+
+        int cols = 7;
+        int rows = 7;
+
+        for (int col = 0; col < cols; col++) {
+
+            for (int row = 0; row < rows; row++) {
+                System.out.print("*");
+            }
+
+            rows--;
+        }
+
+        // int weeks = 3;
+        // int days = 7;
+
+        // // outer loop prints weeks
+        // for (int i = 1; i <= weeks; ++i) {
+        // System.out.println("Week: " + i);
+
+        // // inner loop prints days
+        // for (int j = 1; j <= days; ++j) {
+        // System.out.println(" Day: " + j);
+        // }
+        // }
+
     }
 }
