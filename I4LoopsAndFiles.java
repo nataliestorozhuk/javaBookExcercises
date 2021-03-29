@@ -13,7 +13,9 @@ public class I4LoopsAndFiles {
         // convertinIntoDoWhileLoop();
         // convertinIntoWhileLoop();
         // whileLoopToFor();
-        forLoopToWhile();
+        // forLoopToWhile();
+        // inputValidationLoop();
+        inputValidationLoop2();
     }
 
     public static void whileLoopExercise() {
@@ -176,6 +178,33 @@ public class I4LoopsAndFiles {
         while (x > 0) {
             System.out.println(x + "seconds to go.");
             x--;
+        }
+    }
+
+    public static void inputValidationLoop() {
+        Scanner keyboard = new Scanner(System.in);
+        var input = 0;
+        int x = 5;
+
+        do {
+            System.out.println("Enter a number in a range of 1-4: ");
+            input = keyboard.nextInt();
+        } while (x == 5);
+    }
+
+    public static void inputValidationLoop2() {
+        Scanner keyboard = new Scanner(System.in);
+        int y = 0;
+        String input;
+
+        while (y == 0) {
+            System.out.println("Please enter the word yes or no: ");
+            input = keyboard.next();
+            if (!input.equalsIgnoreCase("yes")) {
+                System.out.println("mistype");
+                break;
+            }
+           
         }
     }
 }
