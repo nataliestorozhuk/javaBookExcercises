@@ -9,7 +9,8 @@ public class I4LoopsAndFiles {
         // forLoopExercise();
         // loopExercise2();
         // nestedLoop();
-        nestedLoop2();
+        // nestedLoop2();
+        convertinIntoDoWhileLoop();
     }
 
     public static void whileLoopExercise() {
@@ -89,25 +90,49 @@ public class I4LoopsAndFiles {
 
         for (int col = 0; col < cols; col++) {
 
-            for (int row = 0; row < rows; row++) {
-                System.out.print("*");
-            }
+            System.out.println();
 
+            // int row = rows; row > 0; row--
+            for (int row = 0; row <= rows; row++) {
+                System.out.print("#");
+            }
             rows--;
         }
 
-        // int weeks = 3;
-        // int days = 7;
+        System.out.println();
+        System.out.println();
 
-        // // outer loop prints weeks
-        // for (int i = 1; i <= weeks; ++i) {
-        // System.out.println("Week: " + i);
+        for (int col = 0; col < 3; col++) {
 
-        // // inner loop prints days
-        // for (int j = 1; j <= days; ++j) {
-        // System.out.println(" Day: " + j);
-        // }
-        // }
+            // int row = rows; row > 0; row--
+
+            for (int row = 3; row >= col; row--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        System.out.println("--------------");
+
+        for (int col = 0; col < 5; col++) {
+
+            for (int row = 5; row > col; row--) {
+                System.out.print("0");
+
+            }
+            System.out.println();
+        }
+    }
+
+    public static void convertinIntoDoWhileLoop() {
+        Scanner keyboard = new Scanner(System.in);
+
+        int x = 1;
+
+        do {
+            System.out.println("Enter a number: ");
+            x = keyboard.nextInt();
+        } while (x > 0);
 
     }
 }
