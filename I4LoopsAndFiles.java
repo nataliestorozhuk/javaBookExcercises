@@ -11,7 +11,8 @@ public class I4LoopsAndFiles {
         // nestedLoop();
         // nestedLoop2();
         // convertinIntoDoWhileLoop();
-        convertinIntoWhileLoop();
+        // convertinIntoWhileLoop();
+        whileLoopToFor();
     }
 
     public static void whileLoopExercise() {
@@ -141,10 +142,25 @@ public class I4LoopsAndFiles {
         Scanner keyboard = new Scanner(System.in);
         String input;
         char sure = ' ';
-        while (sure != 'Y' && sure != 'N' ) {
+        while (sure != 'Y' && sure != 'N') {
             System.out.println("Are you sure you want to quit? ");
             input = keyboard.next();
             sure = input.charAt(0);
+
+        }
+    }
+
+    public static void whileLoopToFor() {
+        int count = 0;
+
+        // while (count < 50) {
+        // System.out.println("count is: " + count);
+        // count++;
+        // }
+
+        for (count = 0; count < 5; count++) {
+            System.out.println("count is: " + count);
+            // count++;
         }
     }
 }
