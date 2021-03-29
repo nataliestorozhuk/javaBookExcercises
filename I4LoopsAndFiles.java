@@ -12,7 +12,8 @@ public class I4LoopsAndFiles {
         // nestedLoop2();
         // convertinIntoDoWhileLoop();
         // convertinIntoWhileLoop();
-        whileLoopToFor();
+        // whileLoopToFor();
+        forLoopToWhile();
     }
 
     public static void whileLoopExercise() {
@@ -151,6 +152,7 @@ public class I4LoopsAndFiles {
     }
 
     public static void whileLoopToFor() {
+
         int count = 0;
 
         // while (count < 50) {
@@ -161,6 +163,19 @@ public class I4LoopsAndFiles {
         for (count = 0; count < 5; count++) {
             System.out.println("count is: " + count);
             // count++;
+        }
+    }
+
+    public static void forLoopToWhile() {
+        // For i loop we are converting from
+        // for (int i = 10; i > 0; i--) {
+        // System.out.println(i + "seconds to go.");
+        // }
+
+        int x = 10;
+        while (x > 0) {
+            System.out.println(x + "seconds to go.");
+            x--;
         }
     }
 }
