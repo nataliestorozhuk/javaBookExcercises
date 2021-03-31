@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
+import java.io.*;
 
 public class I4LoopsAndFiles {
 
@@ -18,7 +19,9 @@ public class I4LoopsAndFiles {
         // inputValidationLoop();
         // inputValidationLoop2();
         // randomInteger();
-        randomInteger2();
+        // randomInteger2();
+        openFileAndWrite();
+
     }
 
     public static void whileLoopExercise() {
@@ -231,4 +234,22 @@ public class I4LoopsAndFiles {
             System.out.println("no");
         }
     }
+
+    public static void openFileAndWrite() {
+        try {
+            File file = new File("D:\\NumberList.txt");
+            PrintWriter outputFile = new PrintWriter(file);
+            // outputFile.println("i");
+            // outputFile.close();
+            for (int i = 0; i <= 100; i++) {
+                outputFile.println(i);
+
+            }
+            outputFile.close();
+        } catch (FileNotFoundException e) {
+           e.printStackTrace();
+        }
+
+    }
+
 }
