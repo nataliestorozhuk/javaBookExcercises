@@ -23,7 +23,8 @@ public class I4LoopsAndFiles {
         // openFileAndWrite();
         // readDataFromFile();
         // readDataFromFile2();
-        openFileWithoutErasingData();
+        // openFileWithoutErasingData();
+        sumOfNumbers();
 
     }
 
@@ -288,7 +289,9 @@ public class I4LoopsAndFiles {
             e.printStackTrace();
         }
     }
-// In other words we need to append data to a file (use two paramaters in constractor: String, bollean(true))
+
+    // In other words we need to append data to a file (use two paramaters in
+    // constractor: String, bollean(true))
     public static void openFileWithoutErasingData() {
 
         try {
@@ -300,5 +303,17 @@ public class I4LoopsAndFiles {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void sumOfNumbers() {
+        int sum = 0;
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter a positive nonzero integer value: ");
+        int value = keyboard.nextInt();
+
+        for (int i = 1; i < value; i++) {
+            sum = sum + value;
+        }
+        System.out.println("The sum is: " + sum);
     }
 }
