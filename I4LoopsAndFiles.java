@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class I4LoopsAndFiles {
 
@@ -15,7 +16,9 @@ public class I4LoopsAndFiles {
         // whileLoopToFor();
         // forLoopToWhile();
         // inputValidationLoop();
-        inputValidationLoop2();
+        // inputValidationLoop2();
+        // randomInteger();
+        randomInteger2();
     }
 
     public static void whileLoopExercise() {
@@ -204,7 +207,28 @@ public class I4LoopsAndFiles {
                 System.out.println("mistype");
                 break;
             }
-           
+
+        }
+    }
+
+    public static void randomInteger() {
+        int number;
+        Random randomNumber = new Random();
+        number = randomNumber.nextInt(10) + 1;
+
+        System.out.println("The random number is: " + number);
+    }
+
+    public static void randomInteger2() {
+
+        int number;
+        Random randomNumber = new Random();
+        number = randomNumber.nextInt(2);
+
+        if (number == 1) {
+            System.out.println("yes");
+        } else if (number == 0) {
+            System.out.println("no");
         }
     }
 }
