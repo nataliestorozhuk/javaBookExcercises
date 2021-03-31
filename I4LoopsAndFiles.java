@@ -20,7 +20,10 @@ public class I4LoopsAndFiles {
         // inputValidationLoop2();
         // randomInteger();
         // randomInteger2();
-        openFileAndWrite();
+        // openFileAndWrite();
+        // readDataFromFile();
+        // readDataFromFile2();
+        openFileWithoutErasingData();
 
     }
 
@@ -247,9 +250,55 @@ public class I4LoopsAndFiles {
             }
             outputFile.close();
         } catch (FileNotFoundException e) {
-           e.printStackTrace();
+            e.printStackTrace();
         }
 
     }
 
+    public static void readDataFromFile() {
+        try {
+            File fileName = new File("D:\\NumberList.txt");
+            Scanner inputFile = new Scanner(fileName);
+
+            while (inputFile.hasNext()) {
+                int number = inputFile.nextInt();
+                System.out.println(number);
+            }
+            inputFile.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void readDataFromFile2() {
+        int total = 0;
+        try {
+            File fileName = new File("D:\\NumberList.txt");
+            Scanner inputFile = new Scanner(fileName);
+
+            while (inputFile.hasNext()) {
+                int number = inputFile.nextInt();
+
+                total = total + number;
+            }
+            System.out.println("The total is: " + total);
+            inputFile.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+// In other words we need to append data to a file (use two paramaters in constractor: String, bollean(true))
+    public static void openFileWithoutErasingData() {
+
+        try {
+            FileWriter file = new FileWriter("D:\\NumberList.txt", true);
+            PrintWriter outputFile = new PrintWriter(file);
+            outputFile.println();
+            outputFile.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
