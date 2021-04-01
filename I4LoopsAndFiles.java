@@ -25,7 +25,8 @@ public class I4LoopsAndFiles {
         // readDataFromFile2();
         // openFileWithoutErasingData();
         // sumOfNumbers();
-        distanceTraveled();
+        // distanceTraveled();
+        distanceFile();
 
     }
 
@@ -336,6 +337,37 @@ public class I4LoopsAndFiles {
             distanceTraveled += speed;
             System.out.println(i + "\t \t" + distanceTraveled);
 
+        }
+
+    }
+
+    public static void distanceFile() {
+        try {
+            
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println("Enter the speed of the veicle (in miles-per-hour): ");
+            int speed = keyboard.nextInt();
+            keyboard.nextLine();
+            System.out.println("Enter a number of hours that the veicle had traveled: ");
+            int hours = keyboard.nextInt();
+            keyboard.nextLine();
+            System.out.println("Enter a file name:  ");
+            String fileName = keyboard.nextLine();
+            int distanceTraveled = 0;
+
+            PrintWriter outputFile = new PrintWriter("D:\\" + fileName);
+            outputFile.println("Hour           Distance Traveled");
+            outputFile.println("------------------------");
+
+            // System.out.println(distance);
+            for (int i = 1; i <= hours; i++) {
+                distanceTraveled += speed;
+               
+                outputFile.println(i + "\t \t" + distanceTraveled);
+            }
+            outputFile.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
 
     }
