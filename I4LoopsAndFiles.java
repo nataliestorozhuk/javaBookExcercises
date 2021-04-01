@@ -26,7 +26,8 @@ public class I4LoopsAndFiles {
         // openFileWithoutErasingData();
         // sumOfNumbers();
         // distanceTraveled();
-        distanceFile();
+        // distanceFile();
+        penniesForPay();
 
     }
 
@@ -343,7 +344,7 @@ public class I4LoopsAndFiles {
 
     public static void distanceFile() {
         try {
-            
+
             Scanner keyboard = new Scanner(System.in);
             System.out.println("Enter the speed of the veicle (in miles-per-hour): ");
             int speed = keyboard.nextInt();
@@ -363,7 +364,7 @@ public class I4LoopsAndFiles {
             // System.out.println(distance);
             for (int i = 1; i <= hours; i++) {
                 distanceTraveled += speed;
-               
+
                 outputFile.println(i + "\t \t" + distanceTraveled);
             }
             outputFile.close();
@@ -371,5 +372,26 @@ public class I4LoopsAndFiles {
             e.printStackTrace();
         }
 
+    }
+
+    public static void penniesForPay() {
+
+        int days = 10;
+        double pennies = 1;
+        var totalSalary = 0.0;
+
+        System.out.println("days          salary for each day");
+        System.out.println("---------------------------------");
+
+        for (int i = 1; i <= days; i++) {
+
+            // double penniesIncrementedByDay = pennies = pennies + 1;
+            double penniesIncrementedByDay = pennies++;
+            System.out.println(i + "\t\t" + penniesIncrementedByDay / 100);
+
+            // totalSalary += penniesIncrementedByDay;
+            totalSalary = totalSalary + penniesIncrementedByDay;
+        }
+        System.out.println(totalSalary / 100);
     }
 }
