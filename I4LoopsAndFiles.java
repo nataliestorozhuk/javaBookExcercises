@@ -355,10 +355,11 @@ public class I4LoopsAndFiles {
             String fileName = keyboard.nextLine();
             int distanceTraveled = 0;
 
+            // Open the file
             PrintWriter outputFile = new PrintWriter("D:\\" + fileName);
+            // Get data and write it to the file
             outputFile.println("Hour           Distance Traveled");
             outputFile.println("------------------------");
-
             // System.out.println(distance);
             for (int i = 1; i <= hours; i++) {
                 distanceTraveled += speed;
