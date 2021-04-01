@@ -388,10 +388,31 @@ public class I4LoopsAndFiles {
             // double penniesIncrementedByDay = pennies = pennies + 1;
             double penniesIncrementedByDay = pennies++;
             System.out.println(i + "\t\t" + penniesIncrementedByDay / 100);
-
+            
             // totalSalary += penniesIncrementedByDay;
             totalSalary = totalSalary + penniesIncrementedByDay;
         }
-        System.out.println(totalSalary / 100);
+
+        System.out.println("Total Salary for " + days + " days is " + totalSalary / 100);
     }
+    public static void penniesForPayRewrite() {
+
+        int days = 10;
+        double pennies = 1;
+        var totalSalary = 0.0;
+
+        System.out.println("days          salary for each day");
+        System.out.println("---------------------------------");
+
+        for (int i = 1; i <= days; i++) {
+            
+            double penniesIncrementedByDay = pennies++;
+            System.out.println(i + "\t\t" + penniesIncrementedByDay/100);
+
+            totalSalary = totalSalary + penniesIncrementedByDay;
+        }
+
+        System.out.println("Total Salary for" + days + " days is: " + totalSalary/100);
+    }
+
 }
