@@ -27,7 +27,8 @@ public class I4LoopsAndFiles {
         // sumOfNumbers();
         // distanceTraveled();
         // distanceFile();
-        penniesForPay();
+        // penniesForPay();
+        letterCounter();
 
     }
 
@@ -388,13 +389,14 @@ public class I4LoopsAndFiles {
             // double penniesIncrementedByDay = pennies = pennies + 1;
             double penniesIncrementedByDay = pennies++;
             System.out.println(i + "\t\t" + penniesIncrementedByDay / 100);
-            
+
             // totalSalary += penniesIncrementedByDay;
             totalSalary = totalSalary + penniesIncrementedByDay;
         }
 
         System.out.println("Total Salary for " + days + " days is " + totalSalary / 100);
     }
+
     public static void penniesForPayRewrite() {
 
         int days = 10;
@@ -405,14 +407,35 @@ public class I4LoopsAndFiles {
         System.out.println("---------------------------------");
 
         for (int i = 1; i <= days; i++) {
-            
+
             double penniesIncrementedByDay = pennies++;
-            System.out.println(i + "\t\t" + penniesIncrementedByDay/100);
+            System.out.println(i + "\t\t" + penniesIncrementedByDay / 100);
 
             totalSalary = totalSalary + penniesIncrementedByDay;
         }
 
-        System.out.println("Total Salary for" + days + " days is: " + totalSalary/100);
+        System.out.println("Total Salary for" + days + " days is: " + totalSalary / 100);
+    }
+
+    public static void letterCounter() {
+        String string;
+        String character;
+        int count = 0;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter any string: ");
+        string = keyboard.nextLine();
+        System.out.println("Enter any character: ");
+        character = keyboard.next();
+        character.charAt(0);
+
+        for (int i = 0; i < string.length(); i++) {
+            if (character.charAt(0) == string.charAt(i)) {
+                count ++;
+            }
+
+        }
+        System.out.println("Letters: " + count);
     }
 
 }
