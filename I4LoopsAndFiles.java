@@ -449,6 +449,7 @@ public class I4LoopsAndFiles {
         fileName = keyboard.nextLine();
 
         try {
+            // Printing data to the file
             PrintWriter fileInfo = new PrintWriter("D:\\" + fileName);
             System.out.println("Enter text to the file : ");
             textFile = keyboard.nextLine();
@@ -458,6 +459,7 @@ public class I4LoopsAndFiles {
 
             File openFile = new File("D:\\" + fileName);
 
+            // checking if the file exist
             if (!openFile.exists()) {
                 System.out.println("File does not exist");
             }
@@ -469,6 +471,7 @@ public class I4LoopsAndFiles {
             System.out.println("Please enter a character to count: ");
             character = keyboard.nextLine().charAt(0);
 
+            // Looping through the textfile and finding the number of caracters that the user has entered
             for (int i = 0; i < textFile.length(); i++) {
                 if (textFile.charAt(i) == character) {
                     count++;
@@ -479,7 +482,7 @@ public class I4LoopsAndFiles {
             e.printStackTrace();
         }
 
-        System.out.println("The numbers of letters in the file is: " + count);
+        System.out.println("The numbers of letters in the file are: " + count);
     }
 
 }
