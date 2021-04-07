@@ -29,7 +29,8 @@ public class I4LoopsAndFiles {
         // distanceFile();
         // penniesForPay();
         // letterCounter();
-        fileLetterCounter();
+        // fileLetterCounter();
+        hotelOccupancy();
 
     }
 
@@ -471,7 +472,8 @@ public class I4LoopsAndFiles {
             System.out.println("Please enter a character to count: ");
             character = keyboard.nextLine().charAt(0);
 
-            // Looping through the textfile and finding the number of caracters that the user has entered
+            // Looping through the textfile and finding the number of caracters that the
+            // user has entered
             for (int i = 0; i < textFile.length(); i++) {
                 if (textFile.charAt(i) == character) {
                     count++;
@@ -483,6 +485,51 @@ public class I4LoopsAndFiles {
         }
 
         System.out.println("The numbers of letters in the file are: " + count);
+    }
+
+    public static void hotelOccupancy() {
+        int numOfFloors;
+        int numOfRoomsOnTheFloor = 0;
+        int numOfOccupiedRooms = 0;
+        int totalNumberOfOccupiedRoom = 0;
+        int numOfVacantRoom = 0;
+        int totalNumberOfRoom = 0;
+        double occupancyRate;
+        
+        
+        
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of floors in the hotel: ");
+        numOfFloors = scanner.nextInt();
+        if (numOfFloors < 1) {
+            System.out.println("Please do not enter a number less then 1. ");
+
+        }
+
+        for (int i = 0; i < numOfFloors; i++) {
+            
+            System.out.println("Enter the number of rooms on the floor: ");
+            numOfRoomsOnTheFloor = scanner.nextInt();
+            if (numOfRoomsOnTheFloor < 10) {
+                System.out.println("Please do not enter less then 10");
+                break;
+            }
+
+            System.out.println("Enter the number of rooms on the floor that are occupied: ");
+            numOfOccupiedRooms = scanner.nextInt();
+
+            totalNumberOfRoom = totalNumberOfRoom + numOfRoomsOnTheFloor;
+            totalNumberOfOccupiedRoom = totalNumberOfOccupiedRoom + numOfOccupiedRooms;
+            numOfVacantRoom = totalNumberOfRoom - totalNumberOfOccupiedRoom;
+             
+        }
+        occupancyRate = (totalNumberOfOccupiedRoom / totalNumberOfRoom) * 100;
+        System.out.println("The number of rooms in the hotel are: " + totalNumberOfRoom);
+        System.out.println("The number of occupied rooms in the hotel are: " + totalNumberOfOccupiedRoom++);
+        System.out.println("The number of the rooms that are vacant:  " + numOfVacantRoom);
+        System.out.println("The occupancy rate for the hotel is:  " + occupancyRate);
+
     }
 
 }
