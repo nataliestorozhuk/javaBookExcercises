@@ -488,12 +488,12 @@ public class I4LoopsAndFiles {
     }
 
     public static void hotelOccupancy() {
-        int numOfFloors;
-        int numOfRoomsOnTheFloor = 0;
-        int numOfOccupiedRooms = 0;
-        int totalNumberOfOccupiedRoom = 0;
-        int numOfVacantRoom = 0;
-        int totalNumberOfRoom = 0;
+        double numOfFloors;
+        double numOfRoomsOnTheFloor = 0;
+        double numOfOccupiedRooms = 0;
+        double totalNumberOfOccupiedRoom = 0;
+        double numOfVacantRoom = 0;
+        double totalNumberOfRooms = 0;
         double occupancyRate;
         
         
@@ -519,13 +519,13 @@ public class I4LoopsAndFiles {
             System.out.println("Enter the number of rooms on the floor that are occupied: ");
             numOfOccupiedRooms = scanner.nextInt();
 
-            totalNumberOfRoom = totalNumberOfRoom + numOfRoomsOnTheFloor;
-            totalNumberOfOccupiedRoom = totalNumberOfOccupiedRoom + numOfOccupiedRooms;
-            numOfVacantRoom = totalNumberOfRoom - totalNumberOfOccupiedRoom;
+            totalNumberOfRooms += numOfRoomsOnTheFloor;
+            totalNumberOfOccupiedRoom += numOfOccupiedRooms;
+            numOfVacantRoom = totalNumberOfRooms - totalNumberOfOccupiedRoom;
              
         }
-        occupancyRate = (totalNumberOfOccupiedRoom / totalNumberOfRoom) * 100;
-        System.out.println("The number of rooms in the hotel are: " + totalNumberOfRoom);
+        occupancyRate = (totalNumberOfOccupiedRoom / totalNumberOfRooms) * 100;
+        System.out.println("The number of rooms in the hotel are: " + totalNumberOfRooms);
         System.out.println("The number of occupied rooms in the hotel are: " + totalNumberOfOccupiedRoom++);
         System.out.println("The number of the rooms that are vacant:  " + numOfVacantRoom);
         System.out.println("The occupancy rate for the hotel is:  " + occupancyRate);
