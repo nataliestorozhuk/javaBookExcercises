@@ -28,7 +28,8 @@ public class I4LoopsAndFiles {
         // distanceTraveled();
         // distanceFile();
         // penniesForPay();
-        letterCounter();
+        // letterCounter();
+        fileLetterCounter();
 
     }
 
@@ -427,15 +428,58 @@ public class I4LoopsAndFiles {
         string = keyboard.nextLine();
         System.out.println("Enter any character: ");
         character = keyboard.next();
-        character.charAt(0);
 
         for (int i = 0; i < string.length(); i++) {
             if (character.charAt(0) == string.charAt(i)) {
-                count ++;
+                count++;
             }
 
         }
         System.out.println("Letters: " + count);
+    }
+
+    public static void fileLetterCounter() {
+        String fileName;
+        char character;
+        String textFile;
+        int count = 0;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the name of the file: ");
+        fileName = keyboard.nextLine();
+
+        try {
+            PrintWriter fileInfo = new PrintWriter("D:\\" + fileName);
+            System.out.println("Enter text to the file : ");
+            textFile = keyboard.nextLine();
+            fileInfo.println(textFile);
+
+            fileInfo.close();
+
+            File openFile = new File("D:\\" + fileName);
+
+            if (!openFile.exists()) {
+                System.out.println("File does not exist");
+            }
+
+            else {
+                System.out.println("File exist");
+            }
+
+            System.out.println("Please enter a character to count: ");
+            character = keyboard.nextLine().charAt(0);
+
+            for (int i = 0; i < textFile.length(); i++) {
+                if (textFile.charAt(i) == character) {
+                    count++;
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("The numbers of letters in the file is: " + count);
     }
 
 }
