@@ -31,7 +31,8 @@ public class I4LoopsAndFiles {
         // letterCounter();
         // fileLetterCounter();
         // hotelOccupancy();
-        averageRainfall();
+        // averageRainfall();
+        population();
 
     }
 
@@ -548,11 +549,56 @@ public class I4LoopsAndFiles {
                 inchesOfRainfallForMonth += keyboard.nextDouble();
                 continue;
             }
-          
+
         }
         keyboard.close();
-        System.out.println("The number of months are: " + numberOfYears * 12 );
+        System.out.println("The number of months are: " + numberOfYears * 12);
         System.out.println("The total inches of ranifall are: " + inchesOfRainfallForMonth);
-        System.out.printf("The average rainfall per month for the entire period is: " + "%.2f", +inchesOfRainfallForMonth / (numberOfYears * 12) );
+        System.out.printf("The average rainfall per month for the entire period is: " + "%.2f",
+                +inchesOfRainfallForMonth / (numberOfYears * 12));
+    }
+
+    public static void population() {
+        int startingNumOfOrgamisms;
+        double populationIncrease;
+        int numOfDays;
+        double sizeOfPopulation = 0;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the starting number of organisms: ");
+        startingNumOfOrgamisms = keyboard.nextInt();
+        // If else will not work here, because the program will still run even if the
+        // imput is incorect.
+        while (startingNumOfOrgamisms < 2) {
+            System.out.println("Error: Enter the starting number of organisms (above 2): ");
+            startingNumOfOrgamisms = keyboard.nextInt();
+        }
+
+        System.out.println("Enter the average daily population increase (as a percentage): ");
+        populationIncrease = keyboard.nextInt();
+        while (populationIncrease <= -1) {
+            System.out.println(
+                    "Error: Enter the average daily population increase (as a percentage), positive number please: ");
+            populationIncrease = keyboard.nextInt();
+        }
+        double populationPercentage = populationIncrease / 100;
+        System.out.println("Enter the number of days they will multiply: ");
+        numOfDays = keyboard.nextInt();
+        while (numOfDays < 1) {
+            System.out.println("Error: Enter the number of days they will multiply (above 1, please): ");
+            numOfDays = keyboard.nextInt();
+        }
+
+        System.out.println("Day           Daily Population");
+        System.out.println("------------------------");
+        sizeOfPopulation = startingNumOfOrgamisms;
+        
+        for (int day = 1; day <= numOfDays; day++) {
+
+            sizeOfPopulation = sizeOfPopulation + (sizeOfPopulation * populationPercentage);
+            System.out.println(day + "\t \t" + sizeOfPopulation);
+
+        }
+
     }
 }
