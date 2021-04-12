@@ -30,7 +30,8 @@ public class I4LoopsAndFiles {
         // penniesForPay();
         // letterCounter();
         // fileLetterCounter();
-        hotelOccupancy();
+        // hotelOccupancy();
+        averageRainfall();
 
     }
 
@@ -495,9 +496,6 @@ public class I4LoopsAndFiles {
         double numOfVacantRoom = 0;
         double totalNumberOfRooms = 0;
         double occupancyRate;
-        
-        
-        
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of floors in the hotel: ");
@@ -508,7 +506,7 @@ public class I4LoopsAndFiles {
         }
 
         for (int i = 0; i < numOfFloors; i++) {
-            
+
             System.out.println("Enter the number of rooms on the floor: ");
             numOfRoomsOnTheFloor = scanner.nextInt();
             if (numOfRoomsOnTheFloor < 10) {
@@ -522,7 +520,7 @@ public class I4LoopsAndFiles {
             totalNumberOfRooms += numOfRoomsOnTheFloor;
             totalNumberOfOccupiedRoom += numOfOccupiedRooms;
             numOfVacantRoom = totalNumberOfRooms - totalNumberOfOccupiedRoom;
-             
+
         }
         occupancyRate = (totalNumberOfOccupiedRoom / totalNumberOfRooms) * 100;
         System.out.println("The number of rooms in the hotel are: " + totalNumberOfRooms);
@@ -532,4 +530,29 @@ public class I4LoopsAndFiles {
 
     }
 
+    public static void averageRainfall() {
+
+        int numberOfYears;
+        double inchesOfRainfallForMonth = 0.0;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the number of the years: ");
+        numberOfYears = keyboard.nextInt();
+        if (numberOfYears < 1) {
+            System.out.println("wrong answer");
+        }
+
+        for (int i = 1; i <= numberOfYears; i++) {
+            for (int j = 1; j <= 12; j++) {
+                System.out.println("Enter the inches of rainfall for an year" + i + " month" + j + ": ");
+                inchesOfRainfallForMonth += keyboard.nextDouble();
+                continue;
+            }
+          
+        }
+        keyboard.close();
+        System.out.println("The number of months are: " + numberOfYears * 12 );
+        System.out.println("The total inches of ranifall are: " + inchesOfRainfallForMonth);
+        System.out.printf("The average rainfall per month for the entire period is: " + "%.2f", +inchesOfRainfallForMonth / (numberOfYears * 12) );
+    }
 }
