@@ -1,6 +1,11 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 import java.io.*;
+import java.lang.reflect.Array;
 
 public class I4LoopsAndFiles {
 
@@ -32,7 +37,9 @@ public class I4LoopsAndFiles {
         // fileLetterCounter();
         // hotelOccupancy();
         // averageRainfall();
-        population();
+        // population();
+        // largestAndSmallest();
+        largestAndSmallestNetVersion();
 
     }
 
@@ -592,7 +599,7 @@ public class I4LoopsAndFiles {
         System.out.println("Day           Daily Population");
         System.out.println("------------------------");
         sizeOfPopulation = startingNumOfOrgamisms;
-        
+
         for (int day = 1; day <= numOfDays; day++) {
 
             sizeOfPopulation = sizeOfPopulation + (sizeOfPopulation * populationPercentage);
@@ -601,4 +608,114 @@ public class I4LoopsAndFiles {
         }
 
     }
+
+    public static void largestAndSmallest() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter a number -99 to exit");
+        System.out.println("Enter a numbers: ");
+
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+
+        do {
+            arr.add(keyboard.nextInt());
+
+        } while (keyboard.nextInt() != -99);
+
+        int max_value = 0;
+
+        for (Integer n : arr) {
+            if (n > max_value)
+                max_value = n;
+        }
+
+        int min_value = arr.get(0);
+        for (Integer n : arr) {
+            if (n < min_value)
+                min_value = n;
+        }
+
+        System.out.println(max_value + " " + min_value);
+
+        // var x = Collections.min(Arrays.asList(intArr));
+
+        // int[] arr = { 55, 3, 6, 333, 5 };
+        // int smallest = 0;
+
+        // for (int n : arr) {
+        // if (n < smallest) {
+        // smallest = n;
+
+        // }
+
+    }
+
+    public static void largestAndSmallestNetVersion() {
+
+     int[]userInteger = {12,2,45,-36};
+
+        int smallest = userInteger[0];
+        int largest = userInteger[0];
+
+        for (int i = 1; i<userInteger.length; i++)
+        {
+           if(userInteger[i] > largest)
+           {
+               largest = userInteger[i];
+           }
+           else if (userInteger[i] < smallest)
+           {
+               smallest = userInteger[i];
+           }
+       }
+       System.out.println("The current largest input: " + largest);
+       System.out.println("The current smallest input: " + smallest);
+
+
+
+
+
+
+
+        // Scanner kb = new Scanner(System.in);
+
+        // int arraySize;
+
+        // System.out.println("How many numbers will you be entering?");
+        // arraySize = kb.nextInt();
+
+        // int[] userInteger = new int[arraySize];
+        // int number = 0;
+
+        // while (userInteger[number] != -99) {
+
+        //     for (int index = 0; index < arraySize; index++) {
+
+        //         System.out.println("Enter -99 to exit program.");
+        //         System.out.println("Enter an integer.");
+        //         userInteger[index] = kb.nextInt();
+        //     }
+        //      // Assign element 0 of userInteger array to smallest and largest
+        //      int smallest = userInteger[0];
+        //      int largest = userInteger[0];
+
+        //      for (int i = 1; i<arraySize; i++)
+        //      {
+        //         if(userInteger[i] > largest)
+        //         {
+        //             largest = userInteger[i];
+        //         }
+        //         else if (userInteger[i] < smallest)
+        //         {
+        //             smallest = userInteger[i];
+        //         }
+        //     }
+        //     System.out.println("The current largest input: " + largest);
+        //     System.out.println("The current smallest input: " + smallest);
+
+            
+        // }
+
+    }
+ 
 }
