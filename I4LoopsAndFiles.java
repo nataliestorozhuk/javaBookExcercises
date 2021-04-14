@@ -39,7 +39,8 @@ public class I4LoopsAndFiles {
         // averageRainfall();
         // population();
         // largestAndSmallest();
-        largestAndSmallestNetVersion();
+        // largestAndSmallestNetVersion();
+        celsiusToFahrengeitTable();
 
     }
 
@@ -652,30 +653,20 @@ public class I4LoopsAndFiles {
 
     public static void largestAndSmallestNetVersion() {
 
-     int[]userInteger = {12,2,45,-36};
+        int[] userInteger = { 12, 2, 45, -36 };
 
         int smallest = userInteger[0];
         int largest = userInteger[0];
 
-        for (int i = 1; i<userInteger.length; i++)
-        {
-           if(userInteger[i] > largest)
-           {
-               largest = userInteger[i];
-           }
-           else if (userInteger[i] < smallest)
-           {
-               smallest = userInteger[i];
-           }
-       }
-       System.out.println("The current largest input: " + largest);
-       System.out.println("The current smallest input: " + smallest);
-
-
-
-
-
-
+        for (int i = 1; i < userInteger.length; i++) {
+            if (userInteger[i] > largest) {
+                largest = userInteger[i];
+            } else if (userInteger[i] < smallest) {
+                smallest = userInteger[i];
+            }
+        }
+        System.out.println("The current largest input: " + largest);
+        System.out.println("The current smallest input: " + smallest);
 
         // Scanner kb = new Scanner(System.in);
 
@@ -689,33 +680,47 @@ public class I4LoopsAndFiles {
 
         // while (userInteger[number] != -99) {
 
-        //     for (int index = 0; index < arraySize; index++) {
+        // for (int index = 0; index < arraySize; index++) {
 
-        //         System.out.println("Enter -99 to exit program.");
-        //         System.out.println("Enter an integer.");
-        //         userInteger[index] = kb.nextInt();
-        //     }
-        //      // Assign element 0 of userInteger array to smallest and largest
-        //      int smallest = userInteger[0];
-        //      int largest = userInteger[0];
+        // System.out.println("Enter -99 to exit program.");
+        // System.out.println("Enter an integer.");
+        // userInteger[index] = kb.nextInt();
+        // }
+        // // Assign element 0 of userInteger array to smallest and largest
+        // int smallest = userInteger[0];
+        // int largest = userInteger[0];
 
-        //      for (int i = 1; i<arraySize; i++)
-        //      {
-        //         if(userInteger[i] > largest)
-        //         {
-        //             largest = userInteger[i];
-        //         }
-        //         else if (userInteger[i] < smallest)
-        //         {
-        //             smallest = userInteger[i];
-        //         }
-        //     }
-        //     System.out.println("The current largest input: " + largest);
-        //     System.out.println("The current smallest input: " + smallest);
+        // for (int i = 1; i<arraySize; i++)
+        // {
+        // if(userInteger[i] > largest)
+        // {
+        // largest = userInteger[i];
+        // }
+        // else if (userInteger[i] < smallest)
+        // {
+        // smallest = userInteger[i];
+        // }
+        // }
+        // System.out.println("The current largest input: " + largest);
+        // System.out.println("The current smallest input: " + smallest);
 
-            
         // }
 
     }
- 
+
+    public static void celsiusToFahrengeitTable() {
+        double fahrenheit = 0.0;
+
+
+        System.out.println("Celsuim            Fahrenheit");
+        System.out.println("------------------------------");
+
+        for (int i = 0; i <= 20; i++) {
+
+            fahrenheit = (9.0/5.0 * i) + 32;
+
+            System.out.println(i + "\t \t \t" + fahrenheit);
+        }
+
+    }
 }
