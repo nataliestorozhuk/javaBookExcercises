@@ -40,7 +40,8 @@ public class I4LoopsAndFiles {
         // population();
         // largestAndSmallest();
         // largestAndSmallestNetVersion();
-        celsiusToFahrengeitTable();
+        // celsiusToFahrengeitTable();
+        barChart();
 
     }
 
@@ -711,16 +712,63 @@ public class I4LoopsAndFiles {
     public static void celsiusToFahrengeitTable() {
         double fahrenheit = 0.0;
 
-
         System.out.println("Celsuim            Fahrenheit");
         System.out.println("------------------------------");
 
         for (int i = 0; i <= 20; i++) {
 
-            fahrenheit = (9.0/5.0 * i) + 32;
+            fahrenheit = (9.0 / 5.0 * i) + 32;
 
             System.out.println(i + "\t \t \t" + fahrenheit);
         }
 
+    }
+
+    public static void barChart() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter today's sales for store1: ");
+        int store1 = keyboard.nextInt();
+        int st1 = store1 / 100;
+        System.out.println("Enter today's sales for store2: ");
+        int store2 = keyboard.nextInt();
+        int st2 = store2 / 100;
+        System.out.println("Enter today's sales for store3: ");
+        int store3 = keyboard.nextInt();
+        int st3 = store3 / 100;
+        System.out.println("Enter today's sales for store4: ");
+        int store4 = keyboard.nextInt();
+        int st4 = store4 / 100;
+        System.out.println("Enter today's sales for store5: ");
+        int store5 = keyboard.nextInt();
+        int st5 = store5 / 100;
+
+        System.out.print("store1: ");
+        for (int i = 1; i <= st1; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+
+        System.out.print("store2: ");
+        for (int i = 1; i <= st2; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+
+        System.out.print("store3: ");
+        for (int i = 1; i <= st3; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+
+        System.out.print("store4: ");
+        for (int i = 1; i <= st4; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        System.out.print("store5: ");
+        for (int i = 1; i <= st5; i++) {
+            System.out.print("*");
+        }
     }
 }
