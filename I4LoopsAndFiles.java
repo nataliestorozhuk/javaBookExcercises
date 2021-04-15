@@ -780,7 +780,7 @@ public class I4LoopsAndFiles {
         Scanner keyboard = new Scanner(System.in);
         int numOfStores = 5;
 
-        int[] arr = new int[5];
+        int[] arr = new int[numOfStores];
         // this loop gets user's input
         for (int i = 0; i < numOfStores; i++) {
 
@@ -790,7 +790,7 @@ public class I4LoopsAndFiles {
         // this loop used to print numbers of stores
         for (int i = 0; i < arr.length; i++) {
 
-            System.out.print("store:" + (i + 1));
+            System.out.print("store" + (i + 1) + ": ");
             // this loop divide user's imput and prints asterisks.
             for (int j = 0; j < arr[i] / 100; j++) {
 
