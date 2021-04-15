@@ -781,17 +781,17 @@ public class I4LoopsAndFiles {
         int numOfStores = 5;
 
         int[] arr = new int[5];
-
+        // this loop gets user's input
         for (int i = 0; i < numOfStores; i++) {
 
             System.out.println("Enter today's sales for store:" + (i + 1));
             arr[i] = keyboard.nextInt();
         }
-
+        // this loop used to print numbers of stores
         for (int i = 0; i < arr.length; i++) {
 
             System.out.print("store:" + (i + 1));
-
+            // this loop divide user's imput and prints asterisks.
             for (int j = 0; j < arr[i] / 100; j++) {
 
                 System.out.print("*");
