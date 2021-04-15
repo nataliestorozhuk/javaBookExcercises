@@ -41,7 +41,8 @@ public class I4LoopsAndFiles {
         // largestAndSmallest();
         // largestAndSmallestNetVersion();
         // celsiusToFahrengeitTable();
-        barChart();
+        // barChart();
+        barChartVersion2();
 
     }
 
@@ -743,6 +744,8 @@ public class I4LoopsAndFiles {
         int store5 = keyboard.nextInt();
         int st5 = store5 / 100;
 
+        System.out.println("SALES BAR CHART");
+
         System.out.print("store1: ");
         for (int i = 1; i <= st1; i++) {
             System.out.print("*");
@@ -770,5 +773,34 @@ public class I4LoopsAndFiles {
         for (int i = 1; i <= st5; i++) {
             System.out.print("*");
         }
+    }
+
+    public static void barChartVersion2() {
+
+        Scanner keyboard = new Scanner(System.in);
+        int numOfStores = 5;
+
+        int[] arr = new int[5];
+
+        for (int i = 0; i < numOfStores; i++) {
+
+            System.out.println("Enter today's sales for store:" + (i + 1));
+            arr[i] = keyboard.nextInt();
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+
+            System.out.print("store:" + (i + 1));
+
+            for (int j = 0; j < arr[i] / 100; j++) {
+
+                System.out.print("*");
+
+            }
+
+            System.out.println();
+
+        }
+
     }
 }
