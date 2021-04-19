@@ -42,7 +42,8 @@ public class I4LoopsAndFiles {
         // largestAndSmallestNetVersion();
         // celsiusToFahrengeitTable();
         // barChart();
-        barChartVersion2();
+        // barChartVersion2();
+        fileHeadDisplay();
 
     }
 
@@ -800,6 +801,35 @@ public class I4LoopsAndFiles {
 
             System.out.println();
 
+        }
+
+    }
+
+    public static void fileHeadDisplay() {
+        var fileLines = 5;
+
+        //Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter file name: ");
+        //String fileName = keyboard.nextLine();
+        String fileName = new Scanner(System.in).nextLine();
+
+        File file = new File("D:\\" + fileName);
+        int counter = 0; 
+
+
+        try {
+            Scanner inputFile = new Scanner(file);
+
+       
+            while (inputFile.hasNext() && counter < 5) {
+                String line = inputFile.nextLine();
+                System.out.println(line);
+                counter ++;
+            }
+
+            inputFile.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
 
     }
