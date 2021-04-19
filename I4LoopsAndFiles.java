@@ -44,7 +44,8 @@ public class I4LoopsAndFiles {
         // barChart();
         // barChartVersion2();
         // fileHeadDisplay();
-        lineNumbers();
+        // lineNumbers();
+        uppercaseFileConverter();
 
     }
 
@@ -834,7 +835,7 @@ public class I4LoopsAndFiles {
     }
 
     public static void lineNumbers() {
-      
+
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter file name: ");
         String fileName = keyboard.nextLine();
@@ -844,7 +845,7 @@ public class I4LoopsAndFiles {
         try {
             Scanner inputFile = new Scanner(file);
             while (inputFile.hasNext()) {
-               System.out.println(lineNum + ": " + inputFile.nextLine());
+                System.out.println(lineNum + ": " + inputFile.nextLine());
                 lineNum = lineNum + 1;
             }
 
@@ -853,5 +854,33 @@ public class I4LoopsAndFiles {
             e.printStackTrace();
         }
 
+    }
+
+    public static void uppercaseFileConverter() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter file name: ");
+        String fileName1 = keyboard.nextLine();
+        System.out.println("Enter file name: ");
+        String fileName2 = keyboard.nextLine();
+
+        File inFile = new File("D:\\" + fileName1);
+
+        try {
+            // Scanner allows me to read a data from a file
+            Scanner inputFile = new Scanner(inFile);
+            File outFile = new File("D:\\" + fileName2);
+            // Print Writer allows me to open a file
+            PrintWriter outputFile = new PrintWriter(outFile);
+            // has.next (boolean) method means while this is true do next:
+            while (inputFile.hasNext()) {
+                outputFile.println(inputFile.nextLine().toUpperCase());
+            }
+
+            inputFile.close();
+            outputFile.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
