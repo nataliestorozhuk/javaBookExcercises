@@ -43,7 +43,8 @@ public class I4LoopsAndFiles {
         // celsiusToFahrengeitTable();
         // barChart();
         // barChartVersion2();
-        fileHeadDisplay();
+        // fileHeadDisplay();
+        lineNumbers();
 
     }
 
@@ -808,23 +809,43 @@ public class I4LoopsAndFiles {
     public static void fileHeadDisplay() {
         var fileLines = 5;
 
-        //Scanner keyboard = new Scanner(System.in);
+        // Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter file name: ");
-        //String fileName = keyboard.nextLine();
+        // String fileName = keyboard.nextLine();
         String fileName = new Scanner(System.in).nextLine();
 
         File file = new File("D:\\" + fileName);
-        int counter = 0; 
-
+        int counter = 0;
 
         try {
             Scanner inputFile = new Scanner(file);
 
-       
             while (inputFile.hasNext() && counter < 5) {
                 String line = inputFile.nextLine();
                 System.out.println(line);
-                counter ++;
+                counter++;
+            }
+
+            inputFile.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void lineNumbers() {
+      
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter file name: ");
+        String fileName = keyboard.nextLine();
+
+        File file = new File("D:\\" + fileName);
+        int lineNum = 1;
+        try {
+            Scanner inputFile = new Scanner(file);
+            while (inputFile.hasNext()) {
+               System.out.println(lineNum + ": " + inputFile.hasNext());
+                lineNum = lineNum + 1;
             }
 
             inputFile.close();
