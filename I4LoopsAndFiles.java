@@ -844,7 +844,7 @@ public class I4LoopsAndFiles {
         try {
             Scanner inputFile = new Scanner(file);
             while (inputFile.hasNext()) {
-               System.out.println(lineNum + ": " + inputFile.hasNext());
+               System.out.println(lineNum + ": " + inputFile.nextLine());
                 lineNum = lineNum + 1;
             }
 
