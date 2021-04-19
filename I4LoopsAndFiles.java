@@ -45,7 +45,8 @@ public class I4LoopsAndFiles {
         // barChartVersion2();
         // fileHeadDisplay();
         // lineNumbers();
-        uppercaseFileConverter();
+        // uppercaseFileConverter();
+        budgetAnalysis();
 
     }
 
@@ -858,11 +859,12 @@ public class I4LoopsAndFiles {
 
     public static void uppercaseFileConverter() {
 
-        Scanner keyboard = new Scanner(System.in);
+        // Scanner keyboard = new Scanner(System.in);
+
         System.out.println("Enter file name: ");
-        String fileName1 = keyboard.nextLine();
+        String fileName1 = new Scanner(System.in).nextLine();
         System.out.println("Enter file name: ");
-        String fileName2 = keyboard.nextLine();
+        String fileName2 = new Scanner(System.in).nextLine();
 
         File inFile = new File("D:\\" + fileName1);
 
@@ -882,5 +884,34 @@ public class I4LoopsAndFiles {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void budgetAnalysis() {
+        double sum = 0;
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.println("Enter the amount that you has budgeted for a month: ");
+        double budgetedMoney = keyboard.nextDouble();
+        System.out.println("Did you have any expenses? ");
+        String answer = keyboard.next();
+        if (answer.equalsIgnoreCase("yes")) {
+            for (int i = 0; i < budgetedMoney; i++) {
+                System.out.println("Please enter your expenses for the month (to stop: enter 0): ");
+                double expenses = keyboard.nextDouble();
+                sum += expenses;
+                if (expenses == 0) {
+                    break;
+                }
+            }
+
+            if (sum > budgetedMoney) {
+                System.out.println("You are under budget: " + (sum - budgetedMoney));
+            } else if (sum < budgetedMoney) {
+                System.out.println("Congradulations!!! You are over budget: " + (budgetedMoney - sum));
+            }
+        } else {
+            System.out.println("There were no expenses for a month");
+        }
+
     }
 }
