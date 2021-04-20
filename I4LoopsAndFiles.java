@@ -46,7 +46,8 @@ public class I4LoopsAndFiles {
         // fileHeadDisplay();
         // lineNumbers();
         // uppercaseFileConverter();
-        budgetAnalysis();
+        // budgetAnalysis();
+        randomNumberGuessingGame();
 
     }
 
@@ -911,6 +912,34 @@ public class I4LoopsAndFiles {
             }
         } else {
             System.out.println("There were no expenses for a month");
+        }
+
+    }
+
+    public static void randomNumberGuessingGame() {
+       
+        Random randomNum = new Random();
+        int number = randomNum.nextInt(5);
+
+        Scanner keyboard = new Scanner(System.in);
+
+        for (int i = 0; i <= number; i++) {
+
+            System.out.println("Please guess what the number is: ");
+            int guessNumber = keyboard.nextInt();
+
+            if (guessNumber == number) {
+                System.out.println("Awesome!!! Your answer is correct. ");
+                break;
+            }
+
+            else if (guessNumber < number) {
+                System.out.println("Too low, try again.");
+                continue;
+            } else if (guessNumber > number) {
+                System.out.println("Too high, try again. ");
+                continue;
+            }
         }
 
     }
