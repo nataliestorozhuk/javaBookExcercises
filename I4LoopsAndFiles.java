@@ -1,4 +1,7 @@
 import java.util.Scanner;
+
+import jdk.nashorn.api.tree.WhileLoopTree;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -923,9 +926,9 @@ public class I4LoopsAndFiles {
 
         Scanner keyboard = new Scanner(System.in);
 
-        for (int i = 0; i <= number; i++) {
+        while(true) {
 
-            System.out.println("Please guess what the number is: ");
+            System.out.println("Please guess what the number is (from 0-5): ");
             int guessNumber = keyboard.nextInt();
 
             if (guessNumber == number) {
