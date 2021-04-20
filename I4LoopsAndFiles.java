@@ -50,7 +50,8 @@ public class I4LoopsAndFiles {
         // lineNumbers();
         // uppercaseFileConverter();
         // budgetAnalysis();
-        randomNumberGuessingGame();
+        // randomNumberGuessingGame();
+        randomNumberGuessingGameEnhancement();
 
     }
 
@@ -920,13 +921,13 @@ public class I4LoopsAndFiles {
     }
 
     public static void randomNumberGuessingGame() {
-       
+
         Random randomNum = new Random();
         int number = randomNum.nextInt(5);
 
         Scanner keyboard = new Scanner(System.in);
 
-        while(true) {
+        while (true) {
 
             System.out.println("Please guess what the number is (from 0-5): ");
             int guessNumber = keyboard.nextInt();
@@ -945,5 +946,34 @@ public class I4LoopsAndFiles {
             }
         }
 
+    }
+
+    public static void randomNumberGuessingGameEnhancement() {
+        int numberOfGuesses = 0;
+        
+        Random randomNum = new Random();
+        int number = randomNum.nextInt(10);
+
+        Scanner keyboard = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.println("Please guess what the number is (from 0-10): ");
+            int guessNumber = keyboard.nextInt();
+            numberOfGuesses++;
+
+            if (guessNumber == number) {
+                System.out.println("Awesome!!! Your answer is correct.  The number of guesses is: " + numberOfGuesses);
+                break;
+            }
+
+            else if (guessNumber < number) {
+                System.out.println("Too low, try again.");
+                continue;
+            } else if (guessNumber > number) {
+                System.out.println("Too high, try again. ");
+                continue;
+            }
+        }
     }
 }
