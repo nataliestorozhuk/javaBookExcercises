@@ -51,7 +51,8 @@ public class I4LoopsAndFiles {
         // uppercaseFileConverter();
         // budgetAnalysis();
         // randomNumberGuessingGame();
-        randomNumberGuessingGameEnhancement();
+        // randomNumberGuessingGameEnhancement();
+        espGame();
 
     }
 
@@ -949,8 +950,9 @@ public class I4LoopsAndFiles {
     }
 
     public static void randomNumberGuessingGameEnhancement() {
+
         int numberOfGuesses = 0;
-        
+
         Random randomNum = new Random();
         int number = randomNum.nextInt(10);
 
@@ -975,5 +977,44 @@ public class I4LoopsAndFiles {
                 continue;
             }
         }
+    }
+
+    public static void espGame() {
+
+        int counterGuessed = 0;
+        int counterNotGuessed = 0;
+        String computerChosenColor = " ";
+        for (int i = 0; i <= 3; i++) {
+
+            Random randomNum = new Random();
+            int number = randomNum.nextInt(5);
+
+            if (number == 0) {
+                computerChosenColor = "red";
+            } else if (number == 1) {
+                computerChosenColor = "green";
+            } else if (number == 2) {
+                computerChosenColor = "blue";
+            } else if (number == 3) {
+                computerChosenColor = "orange";
+            } else if (number == 4) {
+                computerChosenColor = "yellow";
+            }
+
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println("Please enter the color that the computer has selected: ");
+            String guessedColor = keyboard.next();
+
+            if (computerChosenColor.equalsIgnoreCase(guessedColor)) {
+                // System.out.println("The computer selected " + computerChosenColor + "\nYou
+                // selected " + guessedColor);
+                counterGuessed++;
+            } else if (!computerChosenColor.equalsIgnoreCase(guessedColor)) {
+                // System.out.println("The computer selected " + computerChosenColor + "\nYou
+                // selected " + guessedColor);
+                counterNotGuessed++;
+            }
+        }
+        System.out.println("Matches are: " + counterGuessed + "\nNot matched are: " + counterNotGuessed);
     }
 }
