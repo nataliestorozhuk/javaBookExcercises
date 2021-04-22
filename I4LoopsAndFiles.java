@@ -53,7 +53,8 @@ public class I4LoopsAndFiles {
         // randomNumberGuessingGame();
         // randomNumberGuessingGameEnhancement();
         // espGame();
-        squareDisplay();
+        // squareDisplay();
+        diceGame();
 
     }
 
@@ -1099,4 +1100,31 @@ public class I4LoopsAndFiles {
 
     // }
 
+    public static void diceGame() {
+        int compCounter = 0;
+        int usersCounter = 0;
+        int tieDraw = 0;
+
+        for (int i = 0; i <= 2; i++) {
+
+            Random random = new Random();
+            int computerNum = random.nextInt(5) + 1;
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Please enter a number from 1-6: ");
+            int usersNum = scanner.nextInt();
+
+            if (computerNum > usersNum) {
+                compCounter++;
+            } else if (usersNum > computerNum) {
+                usersCounter++;
+            } else if (usersNum == computerNum)
+                tieDraw++;
+        }
+         if (compCounter == usersCounter){
+            System.out.println("There is no winner for this particular roll of the dice");
+        }
+        System.out.println("Computer gueesed: " + compCounter + " times" + "\nUser guessed: " + usersCounter + " times");
+                
+    }
 }
