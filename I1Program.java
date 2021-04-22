@@ -1,4 +1,4 @@
-import java.io.FileNotFoundException;
+import java.io.*;
 
 class I1Program {
     public static void main(String[] args) {

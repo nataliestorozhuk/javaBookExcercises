@@ -1020,31 +1020,83 @@ public class I4LoopsAndFiles {
     }
 
     public static void squareDisplay() {
-        int cols;
-        int rows;
 
         Scanner keyboard = new Scanner(System.in);
-        System.out.println("Please enter an integer not greater then 15: ");
-        int intNumber = keyboard.nextInt();
 
-        cols = intNumber;
-        rows = intNumber;
+        int intNumber = 0;
 
-        if (intNumber > 15) {
-            System.out.println("Wrong, try again. The number has to be less then 15.");
-        }
-         else if (intNumber <= 15) {
-            for (int r = 0; r < rows; r++) {
-                for (int c = 0; c < cols; c++) {
-                    System.out.print("x");
+        do {
+
+            System.out.println("Please enter an integer not greater then 15: ");
+            intNumber = keyboard.nextInt();
+            int cols = intNumber;
+            int rows = intNumber;
+
+            if (intNumber <= 15) {
+                for (int r = 0; r < rows; r++) {
+                    for (int c = 0; c < cols; c++) {
+                        System.out.print("x");
+                    }
+                    // I call the system out println method in order to advance the screen cursor to
+                    // the next line at the end of each row. Without that statement, all the "x"
+                    // will be printed in one long row on the screen.
+                    System.out.println();
                 }
-                // I call the system out println method in order to advance the screen cursor to
-                // the next line at the end of each row. Without that statement, all the "x"
-                // will be printed in one long row on the screen.
-                System.out.println();
+            } else {
+                System.out.println("Wrong, try again. The number has to be less then 15.");
             }
 
-        }
+        } while (intNumber > 15);
 
     }
+
+    // if (intNumber > 15) {
+    // while (intNumber > 15) {
+
+    // }
+    // }
+    // else if (intNumber <= 15) {
+    // for (int r = 0; r < rows; r++) {
+    // for (int c = 0; c < cols; c++) {
+    // System.out.print("x");
+    // }
+    // // I call the system out println method in order to advance the screen cursor
+    // to
+    // // the next line at the end of each row. Without that statement, all the "x"
+    // // will be printed in one long row on the screen.
+    // System.out.println();
+    // }
+
+    // }
+
+    // int cols;
+    // int rows;
+
+    // Scanner keyboard = new Scanner(System.in);
+    // System.out.println("Please enter an integer not greater then 15: ");
+    // int intNumber = keyboard.nextInt();
+
+    // cols = intNumber;
+    // rows = intNumber;
+
+    // if (intNumber > 15) {
+    // while (intNumber > 15) {
+
+    // }
+    // System.out.println("Wrong, try again. The number has to be less then 15.");
+    // }
+    // else if (intNumber <= 15) {
+    // for (int r = 0; r < rows; r++) {
+    // for (int c = 0; c < cols; c++) {
+    // System.out.print("x");
+    // }
+    // // I call the system out println method in order to advance the screen cursor
+    // to
+    // // the next line at the end of each row. Without that statement, all the "x"
+    // // will be printed in one long row on the screen.
+    // System.out.println();
+    // }
+
+    // }
+
 }
