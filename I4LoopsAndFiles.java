@@ -1051,80 +1051,40 @@ public class I4LoopsAndFiles {
 
     }
 
-    // if (intNumber > 15) {
-    // while (intNumber > 15) {
-
-    // }
-    // }
-    // else if (intNumber <= 15) {
-    // for (int r = 0; r < rows; r++) {
-    // for (int c = 0; c < cols; c++) {
-    // System.out.print("x");
-    // }
-    // // I call the system out println method in order to advance the screen cursor
-    // to
-    // // the next line at the end of each row. Without that statement, all the "x"
-    // // will be printed in one long row on the screen.
-    // System.out.println();
-    // }
-
-    // }
-
-    // int cols;
-    // int rows;
-
-    // Scanner keyboard = new Scanner(System.in);
-    // System.out.println("Please enter an integer not greater then 15: ");
-    // int intNumber = keyboard.nextInt();
-
-    // cols = intNumber;
-    // rows = intNumber;
-
-    // if (intNumber > 15) {
-    // while (intNumber > 15) {
-
-    // }
-    // System.out.println("Wrong, try again. The number has to be less then 15.");
-    // }
-    // else if (intNumber <= 15) {
-    // for (int r = 0; r < rows; r++) {
-    // for (int c = 0; c < cols; c++) {
-    // System.out.print("x");
-    // }
-    // // I call the system out println method in order to advance the screen cursor
-    // to
-    // // the next line at the end of each row. Without that statement, all the "x"
-    // // will be printed in one long row on the screen.
-    // System.out.println();
-    // }
-
-    // }
-
     public static void diceGame() {
         int compCounter = 0;
         int usersCounter = 0;
         int tieDraw = 0;
+        int winner1 = 0;
+        int winner2 = 0;
 
         for (int i = 0; i <= 2; i++) {
 
             Random random = new Random();
             int computerNum = random.nextInt(5) + 1;
-
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Please enter a number from 1-6: ");
-            int usersNum = scanner.nextInt();
+            int usersNum = random.nextInt(5) + 1;
 
             if (computerNum > usersNum) {
                 compCounter++;
             } else if (usersNum > computerNum) {
                 usersCounter++;
-            } else if (usersNum == computerNum)
+            } else if (compCounter == usersCounter) {
                 tieDraw++;
+            }
+
         }
-         if (compCounter == usersCounter){
+
+        winner1 = usersCounter - compCounter;
+        winner2 = compCounter - usersCounter;
+
+        if (winner1 > winner2) {
+            System.out.println("The winner is: USER");
+        } else if (winner1 < winner2) {
+            System.out.println("The winner is: COMPUTER");
+        } else if (tieDraw > winner1 && tieDraw > winner2) {
             System.out.println("There is no winner for this particular roll of the dice");
         }
-        System.out.println("Computer gueesed: " + compCounter + " times" + "\nUser guessed: " + usersCounter + " times");
-                
+        System.out.println("Computer scored: " + compCounter + "\nUser scored: " + usersCounter + "\nTied: " + tieDraw);
+
     }
 }
