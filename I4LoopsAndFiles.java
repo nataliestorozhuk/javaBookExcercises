@@ -1078,9 +1078,9 @@ public class I4LoopsAndFiles {
         winner2 = compCounter - usersCounter;
 
         if (winner1 > winner2) {
-            System.out.println("The winner is: USER");
+            System.out.println("The winner is: User");
         } else if (winner1 < winner2) {
-            System.out.println("The winner is: COMPUTER");
+            System.out.println("The winner is: Computer");
         } else if (tieDraw > winner1 && tieDraw > winner2) {
             System.out.println("There is no winner for this particular roll of the dice");
         }
