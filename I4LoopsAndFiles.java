@@ -54,7 +54,8 @@ public class I4LoopsAndFiles {
         // randomNumberGuessingGameEnhancement();
         // espGame();
         // squareDisplay();
-        diceGame();
+        // diceGame();
+        slotMachineSimulation();
 
     }
 
@@ -1087,4 +1088,62 @@ public class I4LoopsAndFiles {
         System.out.println("Computer scored: " + compCounter + "\nUser scored: " + usersCounter + "\nTied: " + tieDraw);
 
     }
+
+    public static void slotMachineSimulation() {
+        String computerChosenColor = "";
+        int number = 0;
+        char playAgain = 'y';
+        int picture1;
+        int picture2;
+        int picture3;
+
+        while (playAgain = 'y') {
+          
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the amount of money you want to enter into the slot machine: ");
+        int money = scanner.nextInt();
+
+        for (int i = 0; i <= 2; i++) {
+
+            Random randomNum = new Random();
+            number = randomNum.nextInt(5);
+
+            if (number == 0) {
+             
+            System.out.println("cherries"); 
+            } else if (number == 1) {
+               
+            System.out.println( "oranges");
+            } else if (number == 2) {
+               
+            System.out.println("plums");
+            } else if (number == 3) {
+                
+            System.out.println("bells");
+            } else if (number == 4) {
+                
+            System.out.println("melons");
+            } else if (number == 5) {
+               
+            System.out.println("bars"); 
+            }
+if (i==0){
+    picture1 = number;
+    }
+    else if (i == 1) {
+        picture2 = number;
+            }
+            else if(i == 2){
+                picture3 = number;
+            }
+            
+            if( picture1 ! == picture2) && ()
+        }
+        // if (computerChosenColor == number) {
+        //     System.out.println("You won $0. ");
+        // }
+        // else if ()
+    }
+     }
 }
