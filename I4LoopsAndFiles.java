@@ -1098,52 +1098,60 @@ public class I4LoopsAndFiles {
         int picture3;
 
         while (playAgain = 'y') {
-          
-        
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the amount of money you want to enter into the slot machine: ");
-        int money = scanner.nextInt();
 
-        for (int i = 0; i <= 2; i++) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter the amount of money you want to enter into the slot machine: ");
+            int money = scanner.nextInt();
 
-            Random randomNum = new Random();
-            number = randomNum.nextInt(5);
+            for (int i = 0; i <= 2; i++) {
 
-            if (number == 0) {
-             
-            System.out.println("cherries"); 
-            } else if (number == 1) {
-               
-            System.out.println( "oranges");
-            } else if (number == 2) {
-               
-            System.out.println("plums");
-            } else if (number == 3) {
-                
-            System.out.println("bells");
-            } else if (number == 4) {
-                
-            System.out.println("melons");
-            } else if (number == 5) {
-               
-            System.out.println("bars"); 
+                Random randomNum = new Random();
+                number = randomNum.nextInt(5);
+
+                if (number == 0) {
+
+                    System.out.println("cherries");
+                } else if (number == 1) {
+
+                    System.out.println("oranges");
+                } else if (number == 2) {
+
+                    System.out.println("plums");
+                } else if (number == 3) {
+
+                    System.out.println("bells");
+                } else if (number == 4) {
+
+                    System.out.println("melons");
+                } else if (number == 5) {
+
+                    System.out.println("bars");
+                }
+                if (i == 0) {
+                    picture1 = number;
+                } else if (i == 1) {
+                    picture2 = number;
+                } else if (i == 2) {
+                    picture3 = number;
+                }
+
+                if ((picture1 != picture2) && (picture1 != picture3) && (picture2 != picture3)) {
+                    System.out.println("You won $0. ");
+                } else if (((picture1 == picture2) && (picture1 != picture3))
+                        || ((picture1 == picture3) && (picture1 != picture2))
+                        || ((picture2 == picture3) && (picture2 != picture1))) {
+                    System.out.println("You won: " + (money * 2));
+                } else {
+                    System.out.println("You won: " + (money * 3));
+                }
+                System.out.println("Do you want to play again? (enter 'y' for yes or 'n' for no): ");
+                playAgain = scanner.next();
             }
-if (i==0){
-    picture1 = number;
-    }
-    else if (i == 1) {
-        picture2 = number;
-            }
-            else if(i == 2){
-                picture3 = number;
-            }
-            
-            if( picture1 ! == picture2) && ()
+
         }
-        // if (computerChosenColor == number) {
-        //     System.out.println("You won $0. ");
-        // }
-        // else if ()
     }
-     }
+
+    public static void personalWebPageGenerator() {
+
+    }
 }
