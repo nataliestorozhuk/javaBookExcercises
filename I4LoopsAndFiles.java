@@ -7,6 +7,9 @@ import java.util.Collections;
 import java.util.Random;
 import java.io.*;
 import java.lang.reflect.Array;
+import java.sql.Date;
+import java.time.LocalTime;
+import java.util.*;
 
 public class I4LoopsAndFiles {
 
@@ -53,7 +56,8 @@ public class I4LoopsAndFiles {
         // espGame();
         // squareDisplay();
         // diceGame();
-        slotMachineSimulation();
+        // slotMachineSimulation();
+        personalWebPageGenerator();
 
     }
 
@@ -1159,5 +1163,29 @@ public class I4LoopsAndFiles {
 
     public static void personalWebPageGenerator() {
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.println("Describe yourself: ");
+        String descripeYuorself = scanner.nextLine();
+
+        java.util.Date d = new java.util.Date();
+        try {
+            File file = new File("D:\\Name.html");
+            PrintWriter outputFile = new PrintWriter(file);
+            outputFile.println("<html>");
+            outputFile.println("<head>");
+            outputFile.println("<body>");
+            outputFile.println("<center>");
+            outputFile.println("<h1>" + name + "<h1>");
+            outputFile.println("<h3>" + d.toString() + "<h3>");
+            outputFile.println("</center>");
+            outputFile.println("<hr />" + descripeYuorself + "<hr />");
+            outputFile.println("<body />");
+            outputFile.println("<html />");
+            outputFile.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
