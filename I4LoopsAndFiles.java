@@ -1,7 +1,5 @@
 import java.util.Scanner;
-
 import jdk.nashorn.api.tree.WhileLoopTree;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -1090,14 +1088,15 @@ public class I4LoopsAndFiles {
     }
 
     public static void slotMachineSimulation() {
-        String computerChosenColor = "";
-        int number = 0;
-        char playAgain = 'y';
-        int picture1;
-        int picture2;
-        int picture3;
 
-        while (playAgain = 'y') {
+        int number = 0;
+        String playAgain = "yes";
+        int picture1 = 0;
+        int picture2 = 0;
+        int picture3 = 0;
+        double amountWon = 0;
+
+        while (playAgain.equalsIgnoreCase("yes")) {
 
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter the amount of money you want to enter into the slot machine: ");
@@ -1135,19 +1134,26 @@ public class I4LoopsAndFiles {
                     picture3 = number;
                 }
 
-                if ((picture1 != picture2) && (picture1 != picture3) && (picture2 != picture3)) {
-                    System.out.println("You won $0. ");
-                } else if (((picture1 == picture2) && (picture1 != picture3))
-                        || ((picture1 == picture3) && (picture1 != picture2))
-                        || ((picture2 == picture3) && (picture2 != picture1))) {
-                    System.out.println("You won: " + (money * 2));
-                } else {
-                    System.out.println("You won: " + (money * 3));
-                }
-                System.out.println("Do you want to play again? (enter 'y' for yes or 'n' for no): ");
-                playAgain = scanner.next();
             }
+            if ((picture1 != picture2) && (picture1 != picture3) && (picture2 != picture3)) {
+                System.out.println("You won $0. ");
+                amountWon = 0;
+            } else if (((picture1 == picture2) && (picture1 != picture3))
+                    || ((picture1 == picture3) && (picture1 != picture2))
+                    || ((picture2 == picture3) && (picture2 != picture1))) {
+                System.out.println("You won: " + (money * 2));
+                amountWon = 2;
+            } else {
+                System.out.println("You won: " + (money * 3));
+                amountWon = 3;
+            }
+            System.out.println("Do you want to play again? (enter 'yes' for yes or 'no' for no): ");
+            playAgain = scanner.next();
+            if (playAgain.equalsIgnoreCase("no")) {
+                System.out.println("The total amount of money entered into slot machine: " + money + "\n"
+                        + "The amount you won: " + money * amountWon);
 
+            }
         }
     }
 
