@@ -16,7 +16,8 @@ public class I5Methods {
 
         // showCharMethod("oleksandra", 7);
         // retailPriceCalculator();
-        rectangleArea();
+        // rectangleArea();
+        paintJobEstimator();
 
     }
 
@@ -72,8 +73,73 @@ public class I5Methods {
     }
 
     public static void displayData(double l, double w, double area) {
-        System.out.println("The length of the rectancle is: " + l + "\n" + "The width of the rectancle is: "
-                + w + "\n" + "The area of the rectancle is: " + area);
+        System.out.println("The length of the rectancle is: " + l + "\n" + "The width of the rectancle is: " + w + "\n"
+                + "The area of the rectancle is: " + area);
 
+    }
+
+    public static void paintJobEstimator() {
+
+        double wallSpace = 115;
+        double amountPerHourPerLabor = 18;
+        double hoursOfLaborRequired = 8;
+        double totalSquareFeetInRoom = 0;
+        // double hoursOfLabor = getHoursOfLabor(totalSquareFeetInRoom, wallSpace,
+        // hoursOfLaborRequired);
+
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.println("Enter the price of the paint per gallon: ");
+        double priceOfPaintPerGallon = keyboard.nextDouble();
+
+        System.out.println("Enter the number of rooms to be painted: ");
+        double numOfRoomToBePainted = keyboard.nextDouble();
+
+        for (int i = 1; i <= numOfRoomToBePainted; i++) {
+
+            System.out.println("Enter the square feet of wall space in room: " + i);
+            double squareFeetInRoom = keyboard.nextDouble();
+            totalSquareFeetInRoom += squareFeetInRoom;
+        }
+
+        System.out.println(
+                "The number of gallons of paint required: " + getTheNumOfGallons(totalSquareFeetInRoom, wallSpace));
+        System.out.println("The hours of labor required: "
+                + getHoursOfLabor(totalSquareFeetInRoom, wallSpace, hoursOfLaborRequired));
+        System.out.println(
+                "The cost of the paint: " + getCostOfThePaint(totalSquareFeetInRoom, wallSpace, priceOfPaintPerGallon));
+        System.out.println("The labor charges are: " + getLaborCharges(
+                getHoursOfLabor(totalSquareFeetInRoom, wallSpace, hoursOfLaborRequired), amountPerHourPerLabor));
+        System.out.println("The total cost of the paint job is: " + getTotalCostOfThePaintJob(
+                getLaborCharges(getHoursOfLabor(totalSquareFeetInRoom, wallSpace, hoursOfLaborRequired),
+                        amountPerHourPerLabor),
+                getCostOfThePaint(totalSquareFeetInRoom, wallSpace, priceOfPaintPerGallon)));
+
+    }
+
+    public static double getTheNumOfGallons(double totalSquareFeetInRoom, double wallSpace) {
+        double numOfGallons = totalSquareFeetInRoom / wallSpace;
+        return numOfGallons;
+    }
+
+    public static double getHoursOfLabor(double totalSquareFeetInRoom, double wallSpace, double hoursOfLaborRequired) {
+        double hoursOfLabor = (totalSquareFeetInRoom / wallSpace) * hoursOfLaborRequired;
+        return hoursOfLabor;
+    }
+
+    public static double getCostOfThePaint(double totalSquareFeetInRoom, double wallSpace,
+            double priceOfPaintPerGallon) {
+        double costOfPaint = (totalSquareFeetInRoom / wallSpace) * priceOfPaintPerGallon;
+        return costOfPaint;
+    }
+
+    public static double getLaborCharges(double hoursOfLabor, double amountPerHourPerLabor) {
+        double laborCharges = hoursOfLabor * amountPerHourPerLabor;
+        return laborCharges;
+    }
+
+    public static double getTotalCostOfThePaintJob(double laborCharges, double costOfThePaint) {
+        double totalCost = laborCharges + costOfThePaint;
+        return totalCost;
     }
 }
