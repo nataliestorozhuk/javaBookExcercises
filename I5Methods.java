@@ -15,7 +15,8 @@ public class I5Methods {
     public static void run() {
 
         // showCharMethod("oleksandra", 7);
-        retailPriceCalculator();
+        // retailPriceCalculator();
+        rectangleArea();
 
     }
 
@@ -31,7 +32,7 @@ public class I5Methods {
         double wholeSaleCost = keyboard.nextInt();
         System.out.println("Please enter item's wholesale cost markup percentage: ");
         double markupPersantage = keyboard.nextInt();
-        double markUpPersantageConv = markupPersantage/100;
+        double markUpPersantageConv = markupPersantage / 100;
         double retailPrice = calculateRetail(wholeSaleCost, markUpPersantageConv);
         System.out.println("The retail price of the item is: " + calculateRetail(wholeSaleCost, markUpPersantageConv));
 
@@ -40,5 +41,39 @@ public class I5Methods {
     public static double calculateRetail(double wholesale, double markupPersantage) {
         double retailPrice = (wholesale * markupPersantage) + wholesale;
         return retailPrice;
+    }
+
+    public static void rectangleArea() {
+
+        double length = getLenght();
+        double width = getWidth();
+        double area = getArea(length, width);
+        displayData(length, width, area);
+
+    }
+
+    public static double getLenght() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the rectangle's length: ");
+        double length = keyboard.nextDouble();
+        return length;
+    }
+
+    public static double getWidth() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the rectangle's width: ");
+        double width = keyboard.nextDouble();
+        return width;
+    }
+
+    public static double getArea(double l, double w) {
+        double area = l * w;
+        return area;
+    }
+
+    public static void displayData(double l, double w, double area) {
+        System.out.println("The length of the rectancle is: " + l + "\n" + "The width of the rectancle is: "
+                + w + "\n" + "The area of the rectancle is: " + area);
+
     }
 }
