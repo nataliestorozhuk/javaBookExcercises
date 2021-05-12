@@ -17,7 +17,8 @@ public class I5Methods {
         // showCharMethod("oleksandra", 7);
         // retailPriceCalculator();
         // rectangleArea();
-        paintJobEstimator();
+        // paintJobEstimator();
+        fallDistance();
 
     }
 
@@ -141,5 +142,17 @@ public class I5Methods {
     public static double getTotalCostOfThePaintJob(double laborCharges, double costOfThePaint) {
         double totalCost = laborCharges + costOfThePaint;
         return totalCost;
+    }
+
+    public static void fallDistance() {
+
+        System.out.println(fallingDistance(3));
+    }
+
+    public static double fallingDistance(double fallingTime) {
+        double g = 9.8;
+        double timeToPowerOf = Math.pow(fallingTime, 2);
+        double distance = 0.5 * g * timeToPowerOf;
+        return distance;
     }
 }
