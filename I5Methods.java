@@ -7,6 +7,7 @@ import java.util.Random;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.sql.Date;
+import java.text.DecimalFormat;
 import java.time.LocalTime;
 import java.util.*;
 
@@ -18,7 +19,8 @@ public class I5Methods {
         // retailPriceCalculator();
         // rectangleArea();
         // paintJobEstimator();
-        fallDistance();
+        // fallDistance();
+        celsiumTemperatureTable();
 
     }
 
@@ -154,5 +156,26 @@ public class I5Methods {
         double timeToPowerOf = Math.pow(fallingTime, 2);
         double distance = 0.5 * g * timeToPowerOf;
         return distance;
+    }
+
+    public static void celsiumTemperatureTable() {
+        System.out.println("Fahrengeit           Celsium");
+        System.out.println("-----------------------------");
+
+        for (int i = 0; i <= 20; i++) {
+            double formated = celsium(i);
+            DecimalFormat df = new DecimalFormat("#.00");
+            String fahrengeitFormated = df.format(formated);
+
+            // System.out.printf(i + "%.2f", celsium(i));
+            // System.out.println(i + "\t \t" + celsium(i));
+            System.out.println(i + "\t \t" + fahrengeitFormated);
+        }
+
+    }
+
+    public static double celsium(double fahrengeit) {
+        double celsiumTemp = 5.0 / 9 * (fahrengeit - 32);
+        return celsiumTemp;
     }
 }
