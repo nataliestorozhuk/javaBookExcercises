@@ -20,7 +20,8 @@ public class I5Methods {
         // rectangleArea();
         // paintJobEstimator();
         // fallDistance();
-        celsiumTemperatureTable();
+        // celsiumTemperatureTable();
+        testAverageAndGrade();
 
     }
 
@@ -177,5 +178,53 @@ public class I5Methods {
     public static double celsium(double fahrengeit) {
         double celsiumTemp = 5.0 / 9 * (fahrengeit - 32);
         return celsiumTemp;
+    }
+
+    public static void testAverageAndGrade() {
+        double totalScore = 0.0;
+
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.println("Enter the test score 1: ");
+        double testScore1 = keyboard.nextDouble();
+        System.out.println("Enter the test score 2: ");
+        double testScore2 = keyboard.nextDouble();
+        System.out.println("Enter the test score 3: ");
+        double testScore3 = keyboard.nextDouble();
+        System.out.println("Enter the test score 4: ");
+        double testScore4 = keyboard.nextDouble();
+        System.out.println("Enter the test score 5: ");
+        double testScore5 = keyboard.nextDouble();
+        totalScore = testScore1 + testScore2 + testScore3 + testScore4 + testScore5;
+
+        System.out.println("Score Letter                Grade");
+        System.out.println("---------------------------------");
+        System.out.println(testScore1 + "\t \t" + determineGrade(testScore1));
+        System.out.println(testScore2 + "\t \t" + determineGrade(testScore2));
+        System.out.println(testScore3 + "\t \t" + determineGrade(testScore3));
+        System.out.println(testScore4 + "\t \t" + determineGrade(testScore4));
+        System.out.println(testScore5 + "\t \t" + determineGrade(testScore5));
+        System.out.println("The average score is: " + getAverage(totalScore));
+
+    }
+
+    public static double getAverage(double totalScore) {
+        return totalScore / 5;
+    }
+
+    public static char determineGrade(double testScore) {
+        char scoreLetter = ' ';
+        if (testScore >= 90) {
+            scoreLetter = 'A';
+        } else if (testScore >= 80 && testScore <= 89) {
+            scoreLetter = 'B';
+        } else if (testScore >= 70 && testScore <= 79) {
+            scoreLetter = 'C';
+        } else if (testScore >= 60 && testScore <= 69) {
+            scoreLetter = 'D';
+        } else {
+            scoreLetter = 'F';
+        }
+        return scoreLetter;
     }
 }
