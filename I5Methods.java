@@ -25,7 +25,8 @@ public class I5Methods {
         // fallDistance();
         // celsiumTemperatureTable();
         // testAverageAndGrade();
-        conversionProgram();
+        // conversionProgram();
+        distanceTraveledModification();
 
     }
 
@@ -287,5 +288,15 @@ public class I5Methods {
         System.out.println("1. Convert to kilometers " + "\n" + "2. Convert to inches " + "\n" + "3. Convert to feet "
                 + "\n" + "4. Quit the program ");
 
+    }
+
+    public static void distanceTraveledModification() {
+
+        System.out.println(distance(85.5, 45));
+    }
+
+    public static double distance(double speed, double time) {
+        double distance = speed * time;
+        return distance;
     }
 }
