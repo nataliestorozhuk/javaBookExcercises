@@ -208,6 +208,11 @@ public class I5Methods {
 
     }
 
+    /**
+     * Finding average test score. Or we can put those 5 test scores into method
+     * parameters and then calculate the average by adding them first and then
+     * dividing by 5.
+     */
     public static double getAverage(double totalScore) {
         return totalScore / 5;
     }
