@@ -1,4 +1,7 @@
 import java.util.Scanner;
+
+import jdk.javadoc.internal.doclets.formats.html.resources.standard;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -21,7 +24,8 @@ public class I5Methods {
         // paintJobEstimator();
         // fallDistance();
         // celsiumTemperatureTable();
-        testAverageAndGrade();
+        // testAverageAndGrade();
+        conversionProgram();
 
     }
 
@@ -231,5 +235,57 @@ public class I5Methods {
             scoreLetter = 'F';
         }
         return scoreLetter;
+    }
+
+    public static void conversionProgram() {
+        double distanceInMeters;
+        int number = 0;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the distance in meters: ");
+        distanceInMeters = keyboard.nextDouble();
+        do {
+            menu();
+            System.out.print("Please enter your choice: ");
+            number = keyboard.nextInt();
+
+            if (number == 1) {
+                showKilometers(distanceInMeters);
+            } else if (number == 2) {
+                showInches(distanceInMeters);
+            } else if (number == 3) {
+                showFeet(distanceInMeters);
+            } else if (number == 4) {
+                System.out.println("Bye!");
+                break;
+            } else {
+                System.out.println("Error message.");
+            }
+        } while (number >= 1 && number <= 3);
+
+    }
+
+    public static void showKilometers(double distanceInMeters) {
+        double kilometers = distanceInMeters * 0.001;
+        System.out.println(distanceInMeters + " meters is " + kilometers + " kilometers");
+        System.out.println(" ");
+    }
+
+    public static void showInches(double distanceInMeters) {
+        double inches = distanceInMeters * 39.37;
+        System.out.println(distanceInMeters + " meters is " + inches + " inches");
+        System.out.println(" ");
+    }
+
+    public static void showFeet(double distanceInMeters) {
+        double feet = distanceInMeters * 3.281;
+        System.out.println(distanceInMeters + " meters is " + feet + " feet");
+        System.out.println(" ");
+    }
+
+    public static void menu() {
+        System.out.println("1. Convert to kilometers " + "\n" + "2. Convert to inches " + "\n" + "3. Convert to feet "
+                + "\n" + "4. Quit the program ");
+
     }
 }
