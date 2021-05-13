@@ -26,7 +26,8 @@ public class I5Methods {
         // celsiumTemperatureTable();
         // testAverageAndGrade();
         // conversionProgram();
-        distanceTraveledModification();
+        // distanceTraveledModification();
+        stockProfit();
 
     }
 
@@ -298,5 +299,39 @@ public class I5Methods {
     public static double distance(double speed, double time) {
         double distance = speed * time;
         return distance;
+    }
+
+    public static void stockProfit() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the number of shares: ");
+        double numOfShares = keyboard.nextDouble();
+        System.out.println("Enter the purchase price per share: ");
+        double purchasePricePerShare = keyboard.nextDouble();
+        System.out.println("Enter the purchase commission paid: ");
+        double purchaceCommissionPaid = keyboard.nextDouble();
+        System.out.println("Enter the sele price per share: ");
+        double salePricePerShare = keyboard.nextDouble();
+        System.out.println("Enter the sale commission paid: ");
+        double saleCommissionPaid = keyboard.nextDouble();
+
+        profitOrLoss(numOfShares, purchasePricePerShare, purchaceCommissionPaid, salePricePerShare, saleCommissionPaid);
+    }
+
+    public static double profitOrLoss(double numOfShares, double purchasePricePerShare, double purchaceCommissionPaid,
+            double salePricePerShare, double saleCommissionPaid) {
+        double profit = ((numOfShares * salePricePerShare) - saleCommissionPaid)
+                - ((numOfShares * purchasePricePerShare) + purchaceCommissionPaid);
+
+        if (profit > 0) {
+            System.out.printf("The profit is: " + "%.2f", + profit);
+        } else {
+            System.out.printf("The loss is: " + "%.2f", +  profit);
+        }
+
+        return profit;
+    }
+
+    public static void kineticEnergy() {
+        
     }
 }
