@@ -27,7 +27,8 @@ public class I5Methods {
         // testAverageAndGrade();
         // conversionProgram();
         // distanceTraveledModification();
-        stockProfit();
+        // stockProfit();
+        kineticEnergy();
 
     }
 
@@ -323,15 +324,29 @@ public class I5Methods {
                 - ((numOfShares * purchasePricePerShare) + purchaceCommissionPaid);
 
         if (profit > 0) {
-            System.out.printf("The profit is: " + "%.2f", + profit);
+            System.out.printf("The profit is: " + "%.2f", +profit);
         } else {
-            System.out.printf("The loss is: " + "%.2f", +  profit);
+            System.out.printf("The loss is: " + "%.2f", +profit);
         }
 
         return profit;
     }
 
     public static void kineticEnergy() {
-        
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter the object's mass in kilograms: ");
+        double objectMass = keyboard.nextDouble();
+        System.out.println("Enter the object's velocity, in meters per second: ");
+        double velocity = keyboard.nextDouble();
+        System.out.println("The kinetic energy of the object in motion is: " + kinEnergy(objectMass, velocity));
+
+    }
+
+    public static double kinEnergy(double objectMass, double velocity) {
+        Math.pow(velocity, 2);
+        double kineticEnergyThatObjectHas = 0.5 * objectMass * Math.pow(velocity, 2);
+        return kineticEnergyThatObjectHas;
+
     }
 }
