@@ -28,7 +28,8 @@ public class I5Methods {
         // conversionProgram();
         // distanceTraveledModification();
         // stockProfit();
-        kineticEnergy();
+        // kineticEnergy();
+        isPrimeMethod();
 
     }
 
@@ -348,5 +349,19 @@ public class I5Methods {
         double kineticEnergyThatObjectHas = 0.5 * objectMass * Math.pow(velocity, 2);
         return kineticEnergyThatObjectHas;
 
+    }
+
+    public static void isPrimeMethod() {
+        isPrime(24);
+
+    }
+
+    public static int isPrime(int num) {
+        if ((num % 2) == 0) {
+            System.out.println("This number is not prime");
+        } else {
+            System.out.println("This number is prime");
+        }
+        return num;
     }
 }
