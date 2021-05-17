@@ -29,7 +29,9 @@ public class I5Methods {
         // distanceTraveledModification();
         // stockProfit();
         // kineticEnergy();
-        isPrimeMethod();
+        // isPrimeMethod();
+        // primeNumberList();
+        evenOddCounter();
 
     }
 
@@ -352,6 +354,7 @@ public class I5Methods {
     }
 
     public static void isPrimeMethod() {
+
         isPrime(24);
 
     }
@@ -364,4 +367,57 @@ public class I5Methods {
         }
         return num;
     }
+
+    public static void primeNumberList() {
+        for (int i = 1; i <= 10; i++) {
+            isPrime(i);
+        }
+
+    }
+
+    public static int isPrimeWriteToFile(int num) {
+        if ((num % 2) == 0) {
+            try {
+                PrintWriter outputFile = new PrintWriter("D:\\PrimeNumber.txt");
+                outputFile.println(num);
+                outputFile.close();
+                // System.out.println("This number is not prime");
+            } catch (Exception e) {
+                System.out.println("An error occurred");
+                e.printStackTrace();
+            }
+
+        } else {
+            System.out.println("This number is prime");
+        }
+        return num;
+    }
+
+    public static void evenOddCounter() {
+        int even = 0;
+        int odd = 0;
+
+        for (int i = 1; i <= 4; i++) {
+            Random randomNum = new Random();
+            int n = randomNum.nextInt(10);
+            if (isEven(n) == true) {
+                even += 1;
+            } else {
+                odd += 1;
+            }
+
+        }
+        System.out.println("The number of even numbers are: " + even + "\n" + "The number of odd numbers are: " + odd);
+
+    }
+
+    public static boolean isEven(int number) {
+        if ((number % 2) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 }
