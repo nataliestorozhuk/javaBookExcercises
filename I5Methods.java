@@ -31,7 +31,8 @@ public class I5Methods {
         // kineticEnergy();
         // isPrimeMethod();
         // primeNumberList();
-        evenOddCounter();
+        // evenOddCounter();
+        presentValue();
 
     }
 
@@ -420,4 +421,23 @@ public class I5Methods {
 
     }
 
+    public static void presentValue() {
+
+        double futureValue = 10000;
+        double numberOfYears = 10;
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter the annual interest rate: ");
+        double annualInterestRate = keyboard.nextDouble();
+
+        System.out.printf("The present value is: " + "%.2f", + presValue(futureValue,annualInterestRate,numberOfYears));
+
+    }
+
+    public static double presValue(double futureValue, double annualInterestRate, double numOfYears) {
+
+        double presentValue = futureValue / Math.pow((1 + annualInterestRate), numOfYears);
+
+        return presentValue;
+    }
 }
