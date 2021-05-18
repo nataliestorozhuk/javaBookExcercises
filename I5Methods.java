@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import jdk.javadoc.internal.doclets.formats.html.resources.standard;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -32,7 +30,8 @@ public class I5Methods {
         // isPrimeMethod();
         // primeNumberList();
         // evenOddCounter();
-        presentValue();
+        // presentValue();
+        rockPaperScissorsGame();
 
     }
 
@@ -430,7 +429,8 @@ public class I5Methods {
         System.out.println("Please enter the annual interest rate: ");
         double annualInterestRate = keyboard.nextDouble();
 
-        System.out.printf("The present value is: " + "%.2f", + presValue(futureValue,annualInterestRate,numberOfYears));
+        System.out.printf("The present value is: " + "%.2f",
+                +presValue(futureValue, annualInterestRate, numberOfYears));
 
     }
 
@@ -440,4 +440,76 @@ public class I5Methods {
 
         return presentValue;
     }
+
+    public static void rockPaperScissorsGame() {
+
+        do {
+
+            String u = usersChoice();
+            String c = computersChoice();
+
+            if (u.equals(c)) {
+                continue;
+            } else {
+                winner(c, u);
+                break;
+            }
+
+        } while (true);
+
+    }
+
+    public static String usersChoice() {
+        String userChoice = "";
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter a number from 1-3: ");
+        int number = keyboard.nextInt();
+
+        if (number == 1) {
+            userChoice = "rock";
+        } else if (number == 2) {
+            userChoice = "paper";
+        } else if (number == 3) {
+            userChoice = "scissors";
+        }
+        return userChoice;
+
+    }
+
+    public static String computersChoice() {
+        String computerChoice = " ";
+
+        Random random = new Random();
+        int compNum = random.nextInt(3) + 1;
+
+        if (compNum == 1) {
+            computerChoice = "rock";
+        } else if (compNum == 2) {
+            computerChoice = "paper";
+        } else if (compNum == 3) {
+            computerChoice = "scissors";
+        }
+        return computerChoice;
+    }
+
+    public static void winner(String user, String computer) {
+
+        if (user.equalsIgnoreCase("rock") && computer.equalsIgnoreCase("scissors")
+                || user.equalsIgnoreCase("scissors") && computer.equalsIgnoreCase("paper")
+                || user.equalsIgnoreCase("paper") && computer.equalsIgnoreCase("rock")) {
+            System.out.println("The user is winner.");
+        } else if (computer.equalsIgnoreCase("scissors") && user.equalsIgnoreCase("paper")
+                || computer.equalsIgnoreCase("rock") && user.equalsIgnoreCase("scissors")
+                || computer.equalsIgnoreCase("paper") && user.equalsIgnoreCase("rock")) {
+            System.out.println("The computer is winner. ");
+        } else if (user.equalsIgnoreCase("paper") && computer.equalsIgnoreCase("paper")
+                || user.equalsIgnoreCase("rock") && computer.equalsIgnoreCase("rock")
+                || user.equalsIgnoreCase("scissors") && computer.equalsIgnoreCase("scissors")) {
+            System.out.println("The choices are the same. ");
+            {
+
+            }
+        }
+    }
+
 }
