@@ -31,7 +31,8 @@ public class I5Methods {
         // primeNumberList();
         // evenOddCounter();
         // presentValue();
-        rockPaperScissorsGame();
+        // rockPaperScissorsGame();
+        espGame();
 
     }
 
@@ -510,6 +511,51 @@ public class I5Methods {
 
             }
         }
+    }
+
+    public static void espGame() {
+        int counter = 0;
+
+        for (int i = 1; i <= 3; i++) {
+            String u = usersColor();
+            String c = computersColor();
+            System.out.println(c);
+            if (u.equals(c)) {
+                counter = counter + 1;
+            }
+
+        }
+        System.out.println("The number of times the user correctly guessed the selected color is: " + counter);
+    }
+
+    public static String usersColor() {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please enter the color that the computer has selected (red, green, blue, orange, yellow):");
+        String usersChoice = keyboard.next();
+        usersChoice.equalsIgnoreCase(usersChoice);
+
+        return usersChoice;
+    }
+
+    public static String computersColor() {
+        String computerChoice = " ";
+
+        Random random = new Random();
+        int compNum = random.nextInt(5) + 1;
+
+        if (compNum == 1) {
+            computerChoice = "red";
+        } else if (compNum == 2) {
+            computerChoice = "green";
+        } else if (compNum == 3) {
+            computerChoice = "blue";
+        } else if (compNum == 4) {
+            computerChoice = "orange";
+        } else if (compNum == 5) {
+            computerChoice = "yellow";
+        }
+        return computerChoice;
     }
 
 }
