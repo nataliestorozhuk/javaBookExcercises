@@ -16,7 +16,8 @@ public class I6ArraysAndTheArrayListClass {
 
     public static void run() {
 
-        printValuesFromArray();
+        // printValuesFromArray();
+        copyValuesFromOneArrayToAnother();
 
     }
 
@@ -26,6 +27,19 @@ public class I6ArraysAndTheArrayListClass {
 
         for (int i = 0; i < refernces.length; i++) {
             System.out.println(refernces[i]);
+        }
+
+    }
+
+    public static void copyValuesFromOneArrayToAnother() {
+
+        int[] numberArray1 = { 5, 3, 6, 4, 1, 1, 3, 6, 9 };
+        int[] numberArray2 = new int[numberArray1.length];
+
+        for (int i = 0; i < numberArray1.length; i++) {
+            numberArray2[i] = numberArray1[i];
+            System.out.println(numberArray2[i] + "\t\t" + numberArray1[i]);
+
         }
 
     }
