@@ -9,7 +9,7 @@ class I1Program {
         // I3DecisionStructures.run();
         // Chapter 4:
 
-        I5Methods.run();
+        I6ArraysAndTheArrayListClass.run();
 
     }
 }
