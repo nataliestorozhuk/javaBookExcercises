@@ -17,7 +17,8 @@ public class I6ArraysAndTheArrayListClass {
     public static void run() {
 
         // printValuesFromArray();
-        copyValuesFromOneArrayToAnother();
+        // copyValuesFromOneArrayToAnother();
+        stringArray();
 
     }
 
@@ -42,5 +43,16 @@ public class I6ArraysAndTheArrayListClass {
 
         }
 
+    }
+
+    public static void stringArray() {
+        int totalStringInArray = 0;
+        String[] names = { "Einstein", "Newton", "Copernicus", "Kepler" };
+
+        for (int i = 0; i < names.length; i++) {
+            System.out.println(names[i]);
+            totalStringInArray += names[i].length();
+        }
+        System.out.println(totalStringInArray);
     }
 }
