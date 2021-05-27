@@ -19,7 +19,8 @@ public class I6ArraysAndTheArrayListClass {
         // printValuesFromArray();
         // copyValuesFromOneArrayToAnother();
         // stringArray();
-        storeInArray();
+        // storeInArray();
+        storeInArrayAndPrint();
 
     }
 
@@ -80,5 +81,30 @@ public class I6ArraysAndTheArrayListClass {
             System.out.println(countryName[j] + "\t\t" + population[j]);
         }
 
+    }
+
+    public static void storeInArrayAndPrint() {
+
+        int idNumber[] = new int[2];
+        double grossPay[] = new double[2];
+
+        for (var i = 0; i < idNumber.length; i++) {
+
+            Scanner keyboard = new Scanner(System.in);
+
+            System.out.println("Enter the id number of employee " + (i + 1) + ":");
+            idNumber[i] = keyboard.nextInt();
+
+            System.out.println("Enter the weekly gross pay of the employee " + (i + 1) + ":");
+            grossPay[i] = keyboard.nextDouble();
+
+        }
+
+        System.out.println("Id number" + "\t\t" + "Gross Pay");
+
+        for (int i = 0; i < grossPay.length; i++) {
+
+            System.out.println(idNumber[i] + "\t\t" + grossPay[i]);
+        }
     }
 }
