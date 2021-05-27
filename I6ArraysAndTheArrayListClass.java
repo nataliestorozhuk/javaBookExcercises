@@ -18,7 +18,8 @@ public class I6ArraysAndTheArrayListClass {
 
         // printValuesFromArray();
         // copyValuesFromOneArrayToAnother();
-        stringArray();
+        // stringArray();
+        storeInArray();
 
     }
 
@@ -54,5 +55,30 @@ public class I6ArraysAndTheArrayListClass {
             totalStringInArray += names[i].length();
         }
         System.out.println(totalStringInArray);
+    }
+
+    public static void storeInArray() {
+
+        String countryName[] = new String[3];
+        int population[] = new int[3];
+
+        for (int i = 0; i < countryName.length; i++) {
+
+            Scanner keyboard = new Scanner(System.in);
+
+            System.out.println("Enter the name of the country " + (i + 1) + ":");
+            countryName[i] = keyboard.next();
+
+            System.out.println("Enter the population for the country " + (i + 1) + ":");
+            population[i] = keyboard.nextInt();
+
+        }
+        System.out.println("Country name" + "\t\t" + "Population");
+
+        for (int j = 0; j < population.length; j++) {
+
+            System.out.println(countryName[j] + "\t\t" + population[j]);
+        }
+
     }
 }
