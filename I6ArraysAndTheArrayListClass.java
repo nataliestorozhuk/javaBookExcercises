@@ -20,7 +20,8 @@ public class I6ArraysAndTheArrayListClass {
         // copyValuesFromOneArrayToAnother();
         // stringArray();
         // storeInArray();
-        storeInArrayAndPrint();
+        // storeInArrayAndPrint();
+        declaringTwoDimensionalArray();
 
     }
 
@@ -106,5 +107,18 @@ public class I6ArraysAndTheArrayListClass {
 
             System.out.println(idNumber[i] + "\t\t" + grossPay[i]);
         }
+    }
+
+    public static void declaringTwoDimensionalArray() {
+
+        // Declaring a two dimensional array with 30 rows and 10 columns.
+
+        // int[][] grades = new int[30][10];
+
+        int[][] numberArray = new int[9][11];
+        // assigning 145 to the first column of the first row of this arr.
+        numberArray[0][0] = 145;
+        numberArray[8][10] = 18;
+
     }
 }
