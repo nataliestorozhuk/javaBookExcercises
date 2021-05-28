@@ -121,4 +121,17 @@ public class I6ArraysAndTheArrayListClass {
         numberArray[8][10] = 18;
 
     }
+
+    public static void summingTwoDimensionalArray() {
+
+        double[][] arr = {{5, 3, 5.0, 6.7}, 
+                          {9.5, 3.9, 5.0, 3.4}};
+      
+
+        double sum = 0.0;
+
+for (int i = 0; i < arr.length; i++) {
+    
+}
+    }
 }
