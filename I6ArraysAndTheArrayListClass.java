@@ -21,7 +21,8 @@ public class I6ArraysAndTheArrayListClass {
         // stringArray();
         // storeInArray();
         // storeInArrayAndPrint();
-        declaringTwoDimensionalArray();
+        // declaringTwoDimensionalArray();
+        summingTwoDimensionalArray();
 
     }
 
@@ -124,14 +125,20 @@ public class I6ArraysAndTheArrayListClass {
 
     public static void summingTwoDimensionalArray() {
 
-        double[][] arr = {{5, 3, 5.0, 6.7}, 
-                          {9.5, 3.9, 5.0, 3.4}};
-      
+        double[][] arr = { { 5.9, 3.58, 5.0, 6.7 }, 
+                           { 9.5, 3.9, 5.0, 3.4 }
+                         };
 
-        double sum = 0.0;
+        double total = 0.0;
 
-for (int i = 0; i < arr.length; i++) {
-    
-}
+        for (int col = 0; col < arr.length; col++) {
+
+            for (int  row = 0; row < arr.length; row++) {
+                total += arr[col][row];
+            }
+
+        }
+        System.out.println("The total is: " + total);
+        
     }
 }
