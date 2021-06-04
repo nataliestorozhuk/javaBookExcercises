@@ -22,7 +22,9 @@ public class I6ArraysAndTheArrayListClass {
         // storeInArray();
         // storeInArrayAndPrint();
         // declaringTwoDimensionalArray();
-        summingTwoDimensionalArray();
+        // summingTwoDimensionalArray();
+        // summingColumn();
+        summingRows();
 
     }
 
@@ -129,8 +131,7 @@ public class I6ArraysAndTheArrayListClass {
         // { 9.5, 3.9, 5.0, 3.4 }
         // };
 
-        int[][] arr = { { 1, 1, 1, 1 }, 
-                        { 1, 1, 1, 1 } };
+        int[][] arr = { { 1, 1, 1, 1 }, { 1, 1, 1, 1 } };
 
         int total = 0;
 
@@ -143,4 +144,27 @@ public class I6ArraysAndTheArrayListClass {
         }
         System.out.println("The total is: " + total);
     }
+
+    public static void summingColumn() {
+
+        int[][] days = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 } };
+
+        int columnTotal = 0;
+
+        for (int i = 0; i < days.length; i++) {
+            // or you can change number 3 to any other, depends what column you want to add.
+            columnTotal += days[i][3];
+        }
+
+        System.out.println(columnTotal);
+    }
+
+    public static void summingRows() {
+        int[][] days = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 } };
+
+        int rowTotal = 0;
+
+        // System.out.println("Total of row is " + rowTotal);
+    }
+
 }
