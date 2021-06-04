@@ -160,11 +160,32 @@ public class I6ArraysAndTheArrayListClass {
     }
 
     public static void summingRows() {
-        int[][] days = { { 1, 2, 3, 4 }, { 5, 6, 7, 8 } };
+
+        int[][] days = { { 1, 2, 3, 4 }, 
+                         { 5, 6, 7, 8 } };
 
         int rowTotal = 0;
 
-        // System.out.println("Total of row is " + rowTotal);
+        for (int i = 0; i < days.length; i++) {
+            rowTotal += days[1][i];
+        }
+
+        System.out.println(rowTotal);
+
+    // int[][] num = {
+    //     {1, 2, 3, 4},
+    //     {1, 2, 3, 4},
+    //     {1, 5, 3, 4},
+    //     {1, 2, 3, 4}
+    //         };
+
+    //         int rowTotal = 0;
+
+    //         for (int i = 0; i < num.length; i++) {
+    //             rowTotal += num[2][i];
+    //         }
+
+    //         System.out.println(rowTotal);
     }
 
 }
